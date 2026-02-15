@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
+import { Mail, MapPin, Linkedin, ChevronDown, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { downloadResume } from "@/lib/resume";
 
 const roles = ["Software Engineer", "AI Developer", "UX Designer"];
 
@@ -56,6 +57,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+            <button
+              onClick={downloadResume}
+              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg flex items-center gap-2 text-sm font-semibold hover:opacity-90 transition-opacity glow"
+            >
+              <Download size={16} />
+              Download CV
+            </button>
             <a
               href="mailto:kainat.nadeem.work@gmail.com"
               className="glass px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm text-foreground hover:border-primary/50 transition-colors"
