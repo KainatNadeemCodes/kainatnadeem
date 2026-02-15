@@ -1,8 +1,35 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
+const roles = ["Software Engineer", "AI Developer", "UX Designer"];
+
 const Hero = () => {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = roles[roleIndex];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting && charIndex < current.length) {
+          setCharIndex((c) => c + 1);
+        } else if (!isDeleting && charIndex === current.length) {
+          setTimeout(() => setIsDeleting(true), 1500);
+        } else if (isDeleting && charIndex > 0) {
+          setCharIndex((c) => c - 1);
+        } else if (isDeleting && charIndex === 0) {
+          setIsDeleting(false);
+          setRoleIndex((i) => (i + 1) % roles.length);
+        }
+      },
+      isDeleting ? 40 : 80
+    );
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, roleIndex]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
@@ -16,8 +43,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="font-mono text-primary text-sm tracking-widest uppercase mb-4">
-            Software Engineer · AI Developer · UX Designer
+          <p className="font-mono text-primary text-sm tracking-widest uppercase mb-4 h-6">
+            {roles[roleIndex].slice(0, charIndex)}
+            <span className="inline-block w-[2px] h-4 bg-primary ml-0.5 align-middle animate-pulse" />
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
             <span className="text-foreground">Kainat</span>{" "}
