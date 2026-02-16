@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-28 px-6">
       <div className="container mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,12 +26,11 @@ const About = () => {
               Through <span className="text-primary font-semibold">NextGenShe</span>, I
               founded a platform expanding educational access for women in underserved
               Pakistani communities — proof that technology, when built with empathy, can
-              shift who gets opportunity. Every product I ship carries that same principle:
-              impact is not a side effect, it's the objective.
+              shift who gets opportunity.
             </p>
             <p>
               I'm drawn to the hard problems at the intersection of machine intelligence
-              and human need. Ethical AI isn't a checkbox for me — it's a design constraint
+              and human need. Ethical AI isn't a checkbox — it's a design constraint
               that makes the work better.
             </p>
           </div>
