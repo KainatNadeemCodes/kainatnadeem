@@ -7,15 +7,15 @@ const projects = [
   {
     title: "AI-Powered Smart Health Assistant",
     description:
-      "An intelligent system assisting users with symptom logic and decision support. Integrates user-centered design and ethical AI principles.",
+      "An intelligent symptom analysis engine combining AI logic with human-centered UX — designed to make healthcare decision support accessible and ethical.",
     tech: ["Python", "Flask", "HTML/CSS", "AI Algorithms"],
     image: projectHealth,
-    tag: "Final Year Project",
+    tag: "AI + Healthcare",
   },
   {
     title: "NextGenShe",
     description:
-      "An online platform providing accessible education for women in conservative communities in Pakistan. Social impact through technology.",
+      "A purpose-built platform expanding educational access for women in underserved Pakistani communities — technology as a vehicle for equity.",
     tech: ["UX Research", "Web Design", "Platform Development"],
     image: projectNextGenShe,
     tag: "Social Impact",
@@ -33,7 +33,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Projects</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Featured Work</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">What I've Shipped</h3>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">

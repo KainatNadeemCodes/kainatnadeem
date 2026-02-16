@@ -20,7 +20,7 @@ const Education = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Education</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Academic Background</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Foundation & Credentials</h3>
         </motion.div>
 
         <motion.div
