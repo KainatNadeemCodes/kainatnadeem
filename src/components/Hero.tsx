@@ -1,102 +1,89 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Linkedin, ChevronDown, Download } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowDown, Download } from "lucide-react";
 import { downloadResume } from "@/lib/resume";
 
-const roles = ["AI Engineer", "UX-Driven Developer", "Impact Technologist"];
-
 const Hero = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = roles[roleIndex];
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting && charIndex < current.length) {
-          setCharIndex((c) => c + 1);
-        } else if (!isDeleting && charIndex === current.length) {
-          setTimeout(() => setIsDeleting(true), 1500);
-        } else if (isDeleting && charIndex > 0) {
-          setCharIndex((c) => c - 1);
-        } else if (isDeleting && charIndex === 0) {
-          setIsDeleting(false);
-          setRoleIndex((i) => (i + 1) % roles.length);
-        }
-      },
-      isDeleting ? 40 : 80
-    );
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, roleIndex]);
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Neural network background" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background" />
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-6"
         >
-          <p className="font-mono text-primary text-sm tracking-widest uppercase mb-4 h-6">
-            {roles[roleIndex].slice(0, charIndex)}
-            <span className="inline-block w-[2px] h-4 bg-primary ml-0.5 align-middle animate-pulse" />
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-            <span className="text-foreground">Kainat</span>{" "}
-            <span className="text-gradient">Nadeem</span>
-          </h1>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Engineering intelligent systems with human-centered design — building technology that empowers communities and drives measurable social change.
-          </p>
+          <span className="text-foreground">Kainat</span>{" "}
+          <span className="text-gradient">Nadeem</span>
+        </motion.h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-            <button
-              onClick={downloadResume}
-              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg flex items-center gap-2 text-sm font-semibold hover:opacity-90 transition-opacity glow"
-            >
-              <Download size={16} />
-              Download CV
-            </button>
-            <a
-              href="mailto:kainat.nadeem.work@gmail.com"
-              className="glass px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm text-foreground hover:border-primary/50 transition-colors"
-            >
-              <Mail size={16} className="text-primary" />
-              kainat.nadeem.work@gmail.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kainat-nadeem-a9408b324"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm text-foreground hover:border-primary/50 transition-colors"
-            >
-              <Linkedin size={16} className="text-primary" />
-              LinkedIn
-            </a>
-            <span className="glass px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin size={16} className="text-primary" />
-              Gujar Khan, Pakistan
-            </span>
-          </div>
+        {/* Title bar */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="font-mono text-primary text-sm md:text-base tracking-[0.2em] uppercase mb-8"
+        >
+          AI Engineer{" "}
+          <span className="text-muted-foreground mx-2">|</span>{" "}
+          Frontend Developer{" "}
+          <span className="text-muted-foreground mx-2">|</span>{" "}
+          UX Strategist
+        </motion.p>
+
+        {/* Positioning sentence */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed"
+        >
+          Building intelligent, user-centered systems that create real-world impact.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          className="flex flex-wrap items-center justify-center gap-4"
+        >
+          <a
+            href="#projects"
+            className="bg-primary text-primary-foreground px-8 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity glow flex items-center gap-2"
+          >
+            View Projects
+            <ArrowDown size={16} />
+          </a>
+          <button
+            onClick={downloadResume}
+            className="glass px-8 py-3 rounded-lg text-sm font-semibold text-foreground hover:border-primary/50 transition-colors flex items-center gap-2"
+          >
+            <Download size={16} className="text-primary" />
+            Download Resume
+          </button>
         </motion.div>
-
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="inline-block animate-bounce"
-        >
-          <ChevronDown size={28} className="text-primary" />
-        </motion.a>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      >
+        <div className="w-5 h-8 rounded-full border border-muted-foreground/30 flex justify-center pt-1.5">
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1 h-1 rounded-full bg-primary"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 };
