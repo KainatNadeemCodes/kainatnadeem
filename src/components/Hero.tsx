@@ -5,37 +5,34 @@ import { downloadResume } from "@/lib/resume";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background" />
+      {/* Ambient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-6"
+          className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tight mb-6"
         >
           <span className="text-foreground">Kainat</span>{" "}
           <span className="text-gradient">Nadeem</span>
         </motion.h1>
 
-        {/* Title bar */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="font-mono text-primary text-sm md:text-base tracking-[0.2em] uppercase mb-8"
         >
-          AI Engineer{" "}
-          <span className="text-muted-foreground mx-2">|</span>{" "}
-          Frontend Developer{" "}
-          <span className="text-muted-foreground mx-2">|</span>{" "}
+          AI Engineer
+          <span className="text-muted-foreground mx-2">·</span>
+          Frontend Developer
+          <span className="text-muted-foreground mx-2">·</span>
           UX Strategist
         </motion.p>
 
-        {/* Positioning sentence */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,7 +42,6 @@ const Hero = () => {
           Building intelligent, user-centered systems that create real-world impact.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,7 +65,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
