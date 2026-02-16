@@ -10,10 +10,10 @@ Nationality: Pakistani
 ================================================================================
 PROFESSIONAL SUMMARY
 ================================================================================
-Software engineer with expertise in developing AI-driven applications and impactful
-digital solutions. Proven track record in creating healthcare software and leading
-projects like NextGenShe. Selected for prestigious international leadership programs,
-demonstrating commitment to professional growth.
+AI engineer with strong frontend UX expertise and a focus on social impact. Proven
+track record in architecting intelligent health systems and founding NextGenShe, a
+platform expanding educational access for women. Combines rigorous engineering with
+human-centered design to build technology that empowers communities.
 
 ================================================================================
 WORK HISTORY

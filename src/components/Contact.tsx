@@ -11,10 +11,10 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Contact</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Let's Connect</h3>
+          <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Get In Touch</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Let's Build Something That Matters</h3>
           <p className="text-muted-foreground mb-12 max-w-lg mx-auto">
-            Open to opportunities, collaborations, and conversations about AI, tech, and social impact.
+            Open to roles, collaborations, and partnerships at the intersection of AI, UX, and social impact.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">

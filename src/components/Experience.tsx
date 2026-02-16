@@ -4,46 +4,46 @@ import { Briefcase, Award } from "lucide-react";
 const experiences = [
   {
     period: "Jan 2025 – Present",
-    title: "AI & Software Development Projects",
-    org: "Virtual University of Pakistan",
+    title: "AI Engineer — Smart Health Assistant",
+    org: "Independent Project",
     icon: Briefcase,
     points: [
-      "Developed AI-Powered Smart Health Assistant for intelligent symptom analysis",
-      "Applied Python, Flask, HTML/CSS, and AI logic algorithms",
-      "Focused on ethical AI, user-centered design, and data-driven decision support",
+      "Architected an AI-driven symptom analysis engine with ethical decision-support logic",
+      "Built end-to-end with Python, Flask, and custom AI algorithms",
+      "Designed the UX around accessibility and data-driven health insights",
     ],
   },
   {
     period: "Jan 2024 – Present",
-    title: "Freelance UX & Front-End Designer",
+    title: "Freelance UX & Frontend Engineer",
     org: "Self-employed",
     icon: Briefcase,
     points: [
-      "Designed logos, posters, social media posts, and flyers for clients",
-      "Applied UX research and user flow principles",
-      "Tools: Canva, Figma, HTML/CSS for interactive prototypes",
+      "Delivered brand identities, interactive prototypes, and responsive interfaces for clients",
+      "Applied UX research methodologies to drive conversion and usability",
+      "Shipped production work using Figma, HTML/CSS, and modern frontend tooling",
     ],
   },
   {
     period: "Jan 2024 – Present",
-    title: "Social Impact Tech Project — NextGenShe",
+    title: "Founder & Lead Engineer — NextGenShe",
     org: "NextGenShe",
     icon: Briefcase,
     points: [
-      "Founded a digital platform providing educational access to women in underserved communities",
-      "Managed UX research, design workflow, and platform implementation",
-      "Developed leadership and project management skills",
+      "Founded a technology platform expanding educational access for women in underserved communities",
+      "Led end-to-end product lifecycle: research, design, engineering, and deployment",
+      "Drove social impact through intentional, user-centered technology decisions",
     ],
   },
   {
     period: "Aug – Nov 2024",
-    title: "Aspire Leadership Program Finalist",
-    org: "Aspire Institute (Harvard Faculty) — Global",
+    title: "Aspire Leadership Program — Global Cohort",
+    org: "Aspire Institute (Harvard Faculty)",
     icon: Award,
     points: [
-      "Selected for prestigious international leadership programme",
-      "Collaborated with global cohort using design thinking",
-      "Strengthened ethical leadership and cross-cultural communication",
+      "Applied design thinking to address systemic social challenges with a global team",
+      "Deepened expertise in ethical leadership and cross-cultural collaboration",
+      "Leveraged technology strategy to drive community-wide impact",
     ],
   },
 ];
@@ -59,7 +59,7 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Experience</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Work History</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Where I've Built & Led</h3>
         </motion.div>
 
         <div className="relative">

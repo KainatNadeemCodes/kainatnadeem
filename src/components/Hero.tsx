@@ -4,7 +4,7 @@ import { Mail, MapPin, Linkedin, ChevronDown, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { downloadResume } from "@/lib/resume";
 
-const roles = ["Software Engineer", "AI Developer", "UX Designer"];
+const roles = ["AI Engineer", "UX-Driven Developer", "Impact Technologist"];
 
 const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -53,7 +53,7 @@ const Hero = () => {
             <span className="text-gradient">Nadeem</span>
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Building AI-driven applications and impactful digital solutions that make a difference.
+            Engineering intelligent systems with human-centered design — building technology that empowers communities and drives measurable social change.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
