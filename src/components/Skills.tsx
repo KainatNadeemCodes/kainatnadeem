@@ -1,43 +1,49 @@
 import { motion } from "framer-motion";
-import { Code2, Brain, Palette, Database, Terminal, Globe } from "lucide-react";
+import { Brain, Layout, Server } from "lucide-react";
 
-const skillCategories = [
-  {
-    icon: Code2,
-    title: "Programming",
-    skills: ["Python", "C/C++", "JavaScript", "HTML/CSS"],
-  },
+const pillars = [
   {
     icon: Brain,
-    title: "AI & Data",
-    skills: ["Machine Learning", "Deep Learning", "Neural Networks", "Data Visualization"],
+    title: "AI & Machine Learning",
+    skills: [
+      "Python",
+      "Machine Learning",
+      "Data Visualization",
+      "AI Logic & Algorithms",
+      "Predictive Modeling",
+      "Flask",
+    ],
   },
   {
-    icon: Palette,
-    title: "UX/UI Design",
-    skills: ["User Research", "Wireframing", "Prototyping", "Figma"],
+    icon: Layout,
+    title: "Frontend & UX Engineering",
+    skills: [
+      "HTML / CSS",
+      "JavaScript",
+      "Responsive Design",
+      "Figma",
+      "User Research",
+      "Wireframing & Prototyping",
+    ],
   },
   {
-    icon: Globe,
-    title: "Web Development",
-    skills: ["Flask", "Django", "REST API", "Responsive Design"],
-  },
-  {
-    icon: Database,
-    title: "Databases",
-    skills: ["MySQL", "SQLite", "MongoDB"],
-  },
-  {
-    icon: Terminal,
-    title: "Tools",
-    skills: ["Git", "VS Code", "Canva", "Algorithms & DS"],
+    icon: Server,
+    title: "Backend & Systems",
+    skills: [
+      "Django",
+      "REST API",
+      "MySQL",
+      "SQLite",
+      "MongoDB",
+      "Git",
+    ],
   },
 ];
 
 const Skills = () => {
   return (
     <section id="skills" className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,20 +54,23 @@ const Skills = () => {
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Engineering Stack</h3>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((cat, i) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {pillars.map((pillar, i) => (
             <motion.div
-              key={cat.title}
+              key={pillar.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass rounded-2xl p-6 hover:border-primary/40 transition-all duration-300 group"
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              className="glass rounded-2xl p-7 hover:border-primary/40 transition-all duration-300 group"
             >
-              <cat.icon size={28} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h4 className="text-foreground font-semibold text-lg mb-3">{cat.title}</h4>
+              <pillar.icon
+                size={26}
+                className="text-primary mb-5 group-hover:scale-110 transition-transform"
+              />
+              <h4 className="text-foreground font-semibold text-lg mb-5">{pillar.title}</h4>
               <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill) => (
+                {pillar.skills.map((skill) => (
                   <span
                     key={skill}
                     className="bg-secondary text-secondary-foreground text-xs px-3 py-1.5 rounded-full font-mono"
