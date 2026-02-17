@@ -1,11 +1,21 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Brain, Heart, Accessibility } from "lucide-react";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
+import projectHaven from "@/assets/project-haven.jpg";
+
+const categoryStyles = {
+  "AI Engineering": { icon: Brain, color: "text-primary", bg: "bg-primary/10", border: "border-primary/20" },
+  "Social Impact": { icon: Heart, color: "text-accent", bg: "bg-accent/10", border: "border-accent/20" },
+  "Inclusive UX": { icon: Accessibility, color: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/20" },
+} as const;
+
+type Category = keyof typeof categoryStyles;
 
 const projects = [
   {
     title: "Smart Health Assistant",
+    category: "AI Engineering" as Category,
     problem: "Healthcare decisions in underserved regions often lack data-driven support, leading to delayed or uninformed care.",
     ai: "Custom AI logic engine for symptom analysis and intelligent decision-support routing.",
     ux: "Designed for low-tech-literacy users — minimal inputs, clear guidance, zero jargon.",
@@ -17,6 +27,7 @@ const projects = [
   },
   {
     title: "NextGenShe",
+    category: "Social Impact" as Category,
     problem: "Women in conservative Pakistani communities face systemic barriers to quality education and digital literacy.",
     ai: null,
     ux: "Built around real user research — navigation, content, and access patterns designed for the target community.",
@@ -28,11 +39,12 @@ const projects = [
   },
   {
     title: "Haven",
+    category: "Inclusive UX" as Category,
     problem: "Neurodivergent users are often overwhelmed by chaotic, unpredictable digital interfaces that ignore sensory and cognitive accessibility needs.",
     ai: null,
     ux: "Designed with sensory-friendly principles — calm color palettes, predictable navigation, and reduced cognitive load for inclusive experiences.",
     tech: ["UX Research", "Accessibility", "User-Centered Design", "Inclusive Design", "Interface Systems"],
-    image: null,
+    image: projectHaven,
     tag: "Concept UX Case Study",
     demo: "#",
     github: null,
@@ -88,6 +100,16 @@ const Projects = () => {
                 {/* Content */}
                 <div className="md:col-span-3 p-7 md:p-8 flex flex-col justify-between">
                   <div>
+                    {(() => {
+                      const cat = categoryStyles[project.category];
+                      const Icon = cat.icon;
+                      return (
+                        <div className={`inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-full border ${cat.bg} ${cat.border} ${cat.color} mb-3`}>
+                          <Icon size={12} />
+                          {project.category}
+                        </div>
+                      );
+                    })()}
                     <h4 className="text-foreground font-bold text-2xl mb-3">{project.title}</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       {project.problem}
