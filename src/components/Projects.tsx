@@ -26,6 +26,17 @@ const projects = [
     demo: "#",
     github: "#",
   },
+  {
+    title: "Haven",
+    problem: "Neurodivergent users are often overwhelmed by chaotic, unpredictable digital interfaces that ignore sensory and cognitive accessibility needs.",
+    ai: null,
+    ux: "Designed with sensory-friendly principles — calm color palettes, predictable navigation, and reduced cognitive load for inclusive experiences.",
+    tech: ["UX Research", "Accessibility", "User-Centered Design", "Inclusive Design", "Interface Systems"],
+    image: null,
+    tag: "Concept UX Case Study",
+    demo: "#",
+    github: null,
+  },
 ];
 
 const Projects = () => {
@@ -56,11 +67,17 @@ const Projects = () => {
               <div className="grid md:grid-cols-5 gap-0">
                 {/* Image */}
                 <div className="md:col-span-2 relative h-56 md:h-full overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/10 to-secondary flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                      <span className="text-6xl font-bold text-primary/30 font-mono">{project.title[0]}</span>
+                    </div>
+                  )}
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary/90 text-primary-foreground text-xs font-mono px-3 py-1 rounded-full backdrop-blur-sm">
                       {project.tag}
@@ -106,14 +123,16 @@ const Projects = () => {
                       href={project.demo}
                       className="bg-primary text-primary-foreground text-xs font-semibold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-1.5"
                     >
-                      Live Demo <ExternalLink size={12} />
+                      {project.github === null ? "View Case Study" : "Live Demo"} <ExternalLink size={12} />
                     </a>
-                    <a
-                      href={project.github}
-                      className="glass text-foreground text-xs font-semibold px-5 py-2 rounded-lg hover:border-primary/40 transition-colors flex items-center gap-1.5"
-                    >
-                      <Github size={13} /> Source
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        className="glass text-foreground text-xs font-semibold px-5 py-2 rounded-lg hover:border-primary/40 transition-colors flex items-center gap-1.5"
+                      >
+                        <Github size={13} /> Source
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
