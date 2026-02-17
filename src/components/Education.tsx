@@ -13,7 +13,7 @@ const Education = () => {
     <section id="education" className="py-28 px-6">
       <div className="container mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -28,7 +28,7 @@ const Education = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="card-elevated p-7 mb-10 transition-all duration-300"
+          className="card-elevated p-7 mb-10"
         >
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -40,7 +40,7 @@ const Education = () => {
                 <span className="font-mono text-muted-foreground text-xs">2022 – 2026</span>
               </div>
               <p className="text-muted-foreground text-xs mb-2">Virtual University of Pakistan</p>
-              <p className="text-secondary-foreground text-sm leading-relaxed">
+              <p className="font-body text-secondary-foreground text-sm leading-relaxed">
                 Focused on programming, AI fundamentals, web development, and UX/UI design. Final year project: AI-Powered Smart Health Assistant.
               </p>
             </div>
@@ -58,12 +58,16 @@ const Education = () => {
           </h4>
           <div className="flex flex-wrap gap-2">
             {certifications.map((cert, i) => (
-              <span
+              <motion.span
                 key={i}
-                className="bg-secondary text-secondary-foreground text-xs px-4 py-2 rounded-full font-mono"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.06 }}
+                className="bg-secondary text-secondary-foreground text-xs px-4 py-2 rounded-full font-mono hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
               >
                 {cert}
-              </span>
+              </motion.span>
             ))}
           </div>
         </motion.div>

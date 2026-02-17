@@ -5,9 +5,9 @@ import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
 import projectHaven from "@/assets/project-haven.jpg";
 
 const categoryStyles = {
-  "AI Engineering": { icon: Brain, color: "text-primary", bg: "bg-primary/10", border: "border-primary/20" },
-  "Social Impact": { icon: Heart, color: "text-accent", bg: "bg-accent/10", border: "border-accent/20" },
-  "Inclusive UX": { icon: Accessibility, color: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/20" },
+  "AI Engineering": { icon: Brain, color: "text-primary", bg: "bg-primary/10", border: "border-primary/25" },
+  "Social Impact": { icon: Heart, color: "text-accent", bg: "bg-accent/10", border: "border-accent/25" },
+  "Inclusive UX": { icon: Accessibility, color: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/25" },
 } as const;
 
 type Category = keyof typeof categoryStyles;
@@ -56,7 +56,7 @@ const Projects = () => {
     <section id="projects" className="py-28 px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -67,99 +67,92 @@ const Projects = () => {
         </motion.div>
 
         <div className="space-y-10">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="card-elevated overflow-hidden transition-all duration-300 group"
-            >
-              <div className="grid md:grid-cols-5 gap-0">
-                {/* Image */}
-                <div className="md:col-span-2 relative h-56 md:h-full overflow-hidden">
-                  {project.image ? (
+          {projects.map((project, i) => {
+            const cat = categoryStyles[project.category];
+            const CatIcon = cat.icon;
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.1 }}
+                className="card-elevated overflow-hidden group"
+              >
+                <div className="grid md:grid-cols-5 gap-0">
+                  {/* Image */}
+                  <div className="md:col-span-2 relative h-56 md:h-full overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/10 to-secondary flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                      <span className="text-6xl font-bold text-primary/30 font-mono">{project.title[0]}</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-card/60 via-transparent to-transparent" />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-card/80 backdrop-blur-sm text-foreground text-xs font-mono px-3 py-1 rounded-full border border-border/40">
+                        {project.tag}
+                      </span>
                     </div>
-                  )}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary/90 text-primary-foreground text-xs font-mono px-3 py-1 rounded-full backdrop-blur-sm">
-                      {project.tag}
-                    </span>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="md:col-span-3 p-7 md:p-8 flex flex-col justify-between">
-                  <div>
-                    {(() => {
-                      const cat = categoryStyles[project.category];
-                      const Icon = cat.icon;
-                      return (
-                        <div className={`inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-full border ${cat.bg} ${cat.border} ${cat.color} mb-3`}>
-                          <Icon size={12} />
-                          {project.category}
-                        </div>
-                      );
-                    })()}
-                    <h4 className="text-foreground font-bold text-2xl mb-3">{project.title}</h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {project.problem}
-                    </p>
+                  {/* Content */}
+                  <div className="md:col-span-3 p-7 md:p-8 flex flex-col justify-between">
+                    <div>
+                      <div className={`inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-full border ${cat.bg} ${cat.border} ${cat.color} mb-4`}>
+                        <CatIcon size={12} />
+                        {project.category}
+                      </div>
+                      <h4 className="text-foreground font-bold text-2xl mb-3">{project.title}</h4>
+                      <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
+                        {project.problem}
+                      </p>
 
-                    <div className="space-y-2 mb-5">
-                      {project.ai && (
+                      <div className="space-y-2 mb-5">
+                        {project.ai && (
+                          <div className="flex items-start gap-2 text-sm">
+                            <span className="text-primary font-mono text-xs mt-0.5 shrink-0">AI</span>
+                            <span className="font-body text-secondary-foreground">{project.ai}</span>
+                          </div>
+                        )}
                         <div className="flex items-start gap-2 text-sm">
-                          <span className="text-primary font-mono text-xs mt-0.5 shrink-0">AI</span>
-                          <span className="text-secondary-foreground">{project.ai}</span>
+                          <span className="text-accent font-mono text-xs mt-0.5 shrink-0">UX</span>
+                          <span className="font-body text-secondary-foreground">{project.ux}</span>
                         </div>
-                      )}
-                      <div className="flex items-start gap-2 text-sm">
-                        <span className="text-accent font-mono text-xs mt-0.5 shrink-0">UX</span>
-                        <span className="text-secondary-foreground">{project.ux}</span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tech.map((t) => (
+                          <span
+                            key={t}
+                            className="bg-secondary text-secondary-foreground text-xs px-3 py-1 rounded-full font-mono"
+                          >
+                            {t}
+                          </span>
+                        ))}
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((t) => (
-                        <span
-                          key={t}
-                          className="bg-secondary text-secondary-foreground text-xs px-3 py-1 rounded-full font-mono"
+                    <div className="flex items-center gap-3">
+                      <a
+                        href={project.demo}
+                        className="bg-gradient-brand text-primary-foreground text-xs font-semibold px-5 py-2.5 rounded-xl transition-all glow-hover flex items-center gap-1.5"
+                      >
+                        {project.github === null ? "View Case Study" : "Live Demo"} <ExternalLink size={12} />
+                      </a>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          className="glass text-foreground text-xs font-semibold px-5 py-2.5 rounded-xl hover:border-primary/40 transition-all flex items-center gap-1.5"
                         >
-                          {t}
-                        </span>
-                      ))}
+                          <Github size={13} /> Source
+                        </a>
+                      )}
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={project.demo}
-                      className="bg-primary text-primary-foreground text-xs font-semibold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-1.5"
-                    >
-                      {project.github === null ? "View Case Study" : "Live Demo"} <ExternalLink size={12} />
-                    </a>
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        className="glass text-foreground text-xs font-semibold px-5 py-2 rounded-lg hover:border-primary/40 transition-colors flex items-center gap-1.5"
-                      >
-                        <Github size={13} /> Source
-                      </a>
-                    )}
-                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
