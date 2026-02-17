@@ -27,6 +27,14 @@ const experiences = [
       "Delivered brand identities, interactive prototypes, and responsive interfaces. Applied UX research methodologies to drive usability using Figma, HTML/CSS, and modern frontend tooling.",
   },
   {
+    period: "2026 – Present",
+    title: "UX Designer — Haven",
+    org: "Concept Project",
+    icon: Briefcase,
+    description:
+      "Designing a sensory-friendly digital platform for neurodivergent users. Leading accessibility-first interface design with calm, predictable interactions and inclusive design systems.",
+  },
+  {
     period: "2024",
     title: "Aspire Leadership — Global Cohort",
     org: "Aspire Institute (Harvard Faculty)",
