@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Brain, Heart, Accessibility } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
 import projectHaven from "@/assets/project-haven.jpg";
@@ -22,8 +23,8 @@ const projects = [
     tech: ["Python", "Flask", "AI Algorithms", "HTML/CSS"],
     image: projectHealth,
     tag: "AI + Healthcare",
-    demo: "#",
-    github: "#",
+    slug: "/case-study/smart-health-assistant",
+    github: null,
   },
   {
     title: "NextGenShe",
@@ -34,8 +35,8 @@ const projects = [
     tech: ["UX Research", "Web Design", "Platform Dev"],
     image: projectNextGenShe,
     tag: "Social Impact",
-    demo: "#",
-    github: "#",
+    slug: "/case-study/nextgenshe",
+    github: null,
   },
   {
     title: "Haven",
@@ -46,12 +47,14 @@ const projects = [
     tech: ["UX Research", "Accessibility", "User-Centered Design", "Inclusive Design", "Interface Systems"],
     image: projectHaven,
     tag: "Concept UX Case Study",
-    demo: "#",
+    slug: "/case-study/haven",
     github: null,
   },
 ];
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="projects" className="py-28 px-6">
       <div className="container mx-auto max-w-5xl">
@@ -77,7 +80,8 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="card-elevated overflow-hidden group"
+                className="card-elevated overflow-hidden group cursor-pointer"
+                onClick={() => navigate(project.slug)}
               >
                 <div className="grid md:grid-cols-5 gap-0">
                   {/* Image */}
@@ -133,20 +137,12 @@ const Projects = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <a
-                        href={project.demo}
+                      <button
+                        onClick={(e) => { e.stopPropagation(); navigate(project.slug); }}
                         className="bg-gradient-brand text-primary-foreground text-xs font-semibold px-5 py-2.5 rounded-xl transition-all glow-hover flex items-center gap-1.5"
                       >
-                        {project.github === null ? "View Case Study" : "Live Demo"} <ExternalLink size={12} />
-                      </a>
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          className="glass text-foreground text-xs font-semibold px-5 py-2.5 rounded-xl hover:border-primary/40 transition-all flex items-center gap-1.5"
-                        >
-                          <Github size={13} /> Source
-                        </a>
-                      )}
+                        View Case Study <ExternalLink size={12} />
+                      </button>
                     </div>
                   </div>
                 </div>
