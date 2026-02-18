@@ -23,9 +23,20 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      {/* Ambient glow orbs */}
-      <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/[0.04] blur-[120px] pointer-events-none" />
+      {/* Slow-drifting ambient orbs */}
+      <div className="orb-drift-1 absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[150px] pointer-events-none" />
+      <div className="orb-drift-2 absolute bottom-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-accent/[0.05] blur-[130px] pointer-events-none" />
+      <div className="orb-drift-3 absolute top-2/3 left-1/5 w-[300px] h-[300px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <span className="particle particle-1 w-1 h-1 bg-primary/30 left-[15%] bottom-[20%]" />
+        <span className="particle particle-2 w-1.5 h-1.5 bg-accent/25 left-[35%] bottom-[15%]" />
+        <span className="particle particle-3 w-0.5 h-0.5 bg-primary/40 left-[55%] bottom-[25%]" />
+        <span className="particle particle-4 w-1 h-1 bg-accent/30 left-[70%] bottom-[18%]" />
+        <span className="particle particle-5 w-1.5 h-1.5 bg-primary/20 left-[82%] bottom-[30%]" />
+        <span className="particle particle-6 w-0.5 h-0.5 bg-accent/35 left-[25%] bottom-[35%]" />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
