@@ -116,3 +116,76 @@
   0%, 100% { opacity: 0.03; }
   50% { opacity: 0.06; }
 }
+
+/* Slow-drifting orb animations — GPU only (transform + opacity) */
+@keyframes orbDrift1 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(40px, -30px) scale(1.05); }
+  66%  { transform: translate(-20px, 20px) scale(0.97); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes orbDrift2 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(-35px, 25px) scale(1.04); }
+  66%  { transform: translate(25px, -15px) scale(0.96); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes orbDrift3 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  50%  { transform: translate(20px, 30px) scale(1.03); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* Floating particle keyframes */
+@keyframes floatUp1 {
+  0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-120px) translateX(12px); opacity: 0; }
+}
+
+@keyframes floatUp2 {
+  0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-100px) translateX(-10px); opacity: 0; }
+}
+
+@keyframes floatUp3 {
+  0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
+  15%  { opacity: 0.6; }
+  85%  { opacity: 0.3; }
+  100% { transform: translateY(-90px) translateX(8px); opacity: 0; }
+}
+
+/* Living background utility classes */
+.orb-drift-1 {
+  animation: orbDrift1 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-drift-2 {
+  animation: orbDrift2 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-drift-3 {
+  animation: orbDrift3 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.particle-1 { animation: floatUp1 9s ease-in-out infinite; }
+.particle-2 { animation: floatUp2 12s ease-in-out infinite 2s; }
+.particle-3 { animation: floatUp3 10s ease-in-out infinite 4s; }
+.particle-4 { animation: floatUp1 14s ease-in-out infinite 1s; }
+.particle-5 { animation: floatUp2 11s ease-in-out infinite 6s; }
+.particle-6 { animation: floatUp3 13s ease-in-out infinite 3s; }
