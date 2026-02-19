@@ -1,5 +1,6 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import projectHealth from "@/assets/project-health.jpg";
+import PageTransition from "@/components/PageTransition";
 
 const bullets = (items: string[]) => (
   <ul className="space-y-2">

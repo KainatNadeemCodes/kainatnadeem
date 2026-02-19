@@ -1,5 +1,6 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import projectHaven from "@/assets/project-haven.jpg";
+import PageTransition from "@/components/PageTransition";
 
 const bullets = (items: string[]) => (
   <ul className="space-y-2">

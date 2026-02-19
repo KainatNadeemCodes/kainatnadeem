@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import PageTransition from "@/components/PageTransition";
 
 interface Section {
   heading: string;
@@ -32,6 +33,7 @@ const CaseStudyLayout = ({
   sections,
 }: CaseStudyLayoutProps) => {
   return (
+    <PageTransition>
     <div className="min-h-screen bg-background text-foreground">
       {/* Back nav */}
       <div className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl">
@@ -155,6 +157,7 @@ const CaseStudyLayout = ({
         </motion.div>
       </div>
     </div>
+    </PageTransition>
   );
 };
 
