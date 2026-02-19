@@ -12,6 +12,14 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const scrollToSection = (href: string) => {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,13 +44,13 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
+              onClick={() => scrollToSection(link.href)}
               className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               {link.label}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -98,14 +106,16 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6 py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setTimeout(() => scrollToSection(link.href), 150);
+                  }}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-2 text-left"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>
