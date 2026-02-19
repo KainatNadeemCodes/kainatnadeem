@@ -7,8 +7,8 @@
 @layer base {
   /* ── Dark mode (default) ── */
   :root {
-    --background: 240 6% 7%;
-    --foreground: 220 20% 95%;
+    --background: 228 12% 9%;
+    --foreground: 220 18% 94%;
 
     --card: 240 6% 10%;
     --card-foreground: 220 20% 95%;

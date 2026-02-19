@@ -1,43 +1,78 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Sparkles } from "lucide-react";
 import { downloadResume } from "@/lib/resume";
+import NeuralCanvas from "@/components/NeuralCanvas";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
-      {/* Animated grid background */}
+
+      {/* ── Layer 1: Neural node canvas ── */}
+      <NeuralCanvas />
+
+      {/* ── Layer 2: Subtle dot grid ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, hsl(220 90% 70% / 0.07) 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      {/* ── Layer 3: Soft vignette to keep edges dark ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, hsl(var(--background)) 100%)",
+        }}
+      />
+
+      {/* ── Layer 4: Edge fade (top + bottom) ── */}
       <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(hsl(220 90% 56% / 0.04) 1px, transparent 1px),
-              linear-gradient(90deg, hsl(220 90% 56% / 0.04) 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px",
-            animation: "gridPulse 6s ease-in-out infinite",
-          }}
-        />
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      {/* Slow-drifting ambient orbs */}
-      <div className="orb-drift-1 absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[150px] pointer-events-none" />
-      <div className="orb-drift-2 absolute bottom-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-accent/[0.05] blur-[130px] pointer-events-none" />
-      <div className="orb-drift-3 absolute top-2/3 left-1/5 w-[300px] h-[300px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
+      {/* ── Layer 5: Slow ambient orbs ── */}
+      <div
+        className="orb-drift-1 absolute pointer-events-none"
+        style={{
+          top: "20%",
+          left: "20%",
+          width: 560,
+          height: 560,
+          borderRadius: "50%",
+          background: "hsl(220 90% 60% / 0.055)",
+          filter: "blur(120px)",
+        }}
+      />
+      <div
+        className="orb-drift-2 absolute pointer-events-none"
+        style={{
+          bottom: "15%",
+          right: "18%",
+          width: 440,
+          height: 440,
+          borderRadius: "50%",
+          background: "hsl(260 70% 60% / 0.05)",
+          filter: "blur(110px)",
+        }}
+      />
+      <div
+        className="orb-drift-3 absolute pointer-events-none"
+        style={{
+          top: "55%",
+          left: "60%",
+          width: 280,
+          height: 280,
+          borderRadius: "50%",
+          background: "hsl(240 80% 65% / 0.04)",
+          filter: "blur(90px)",
+        }}
+      />
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="particle particle-1 w-1 h-1 bg-primary/30 left-[15%] bottom-[20%]" />
-        <span className="particle particle-2 w-1.5 h-1.5 bg-accent/25 left-[35%] bottom-[15%]" />
-        <span className="particle particle-3 w-0.5 h-0.5 bg-primary/40 left-[55%] bottom-[25%]" />
-        <span className="particle particle-4 w-1 h-1 bg-accent/30 left-[70%] bottom-[18%]" />
-        <span className="particle particle-5 w-1.5 h-1.5 bg-primary/20 left-[82%] bottom-[30%]" />
-        <span className="particle particle-6 w-0.5 h-0.5 bg-accent/35 left-[25%] bottom-[35%]" />
-      </div>
-
+      {/* ── Content ── */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +81,9 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/60 bg-card/40 backdrop-blur-sm mb-8"
         >
           <Sparkles size={14} className="text-primary" />
-          <span className="text-xs font-mono text-muted-foreground tracking-wider uppercase">AI · Frontend · UX · Impact</span>
+          <span className="text-xs font-mono text-muted-foreground tracking-wider uppercase">
+            AI · Frontend · UX · Impact
+          </span>
         </motion.div>
 
         <motion.h1
@@ -90,6 +127,10 @@ const Hero = () => {
         >
           <a
             href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="bg-gradient-brand text-primary-foreground px-8 py-3.5 rounded-xl text-sm font-semibold transition-all glow glow-hover flex items-center gap-2"
           >
             View Projects
@@ -105,7 +146,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* ── Scroll indicator ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
