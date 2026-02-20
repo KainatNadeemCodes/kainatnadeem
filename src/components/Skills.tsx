@@ -5,64 +5,61 @@ const pillars = [
   {
     icon: Brain,
     title: "AI & Machine Learning",
-    accent: "from-primary to-accent",
+    description: "Designing intelligent systems with ethical decision-support logic.",
     skills: ["Python", "Machine Learning", "AI Algorithms", "Data Visualization", "Predictive Modeling", "Flask"],
   },
   {
     icon: Layout,
     title: "Frontend & UX Engineering",
-    accent: "from-primary to-primary",
+    description: "Building interfaces grounded in research and accessibility.",
     skills: ["JavaScript", "HTML/CSS", "Responsive Design", "Figma", "User Research", "Prototyping"],
   },
   {
     icon: Server,
     title: "Backend & Systems",
-    accent: "from-accent to-primary",
+    description: "Architecting reliable data pipelines and APIs.",
     skills: ["Django", "REST API", "MySQL", "SQLite", "MongoDB", "Git"],
   },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-28 px-6">
+    <section id="skills" className="py-24 px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14"
+          className="mb-12"
         >
-          <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Toolkit</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground">Engineering Stack</h3>
+          <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Toolkit</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Engineering Stack</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="card-elevated p-7 group"
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-card border border-border/50 rounded-xl p-6 hover:border-primary/20 transition-colors duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <pillar.icon size={20} className="text-primary" />
+              <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4">
+                <pillar.icon size={18} className="text-primary" />
               </div>
-              <h4 className="text-foreground font-semibold text-lg mb-5">{pillar.title}</h4>
-              <div className="flex flex-wrap gap-2">
-                {pillar.skills.map((skill, si) => (
-                  <motion.span
+              <h3 className="text-foreground font-semibold text-base mb-1.5">{pillar.title}</h3>
+              <p className="text-muted-foreground text-xs font-body mb-5 leading-relaxed">{pillar.description}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {pillar.skills.map((skill) => (
+                  <span
                     key={skill}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.1 + si * 0.04 }}
-                    className="bg-secondary text-secondary-foreground text-xs px-3 py-1.5 rounded-full font-mono hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    className="bg-secondary text-secondary-foreground text-xs px-2.5 py-1 rounded-md font-mono"
                   >
                     {skill}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </motion.div>

@@ -2,51 +2,49 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="py-28 px-6">
+    <section id="about" className="py-24 px-6">
       <div className="container mx-auto max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Who I Am</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
-            AI Engineer. UX Thinker. Impact Builder.
-          </h3>
+          <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">About</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10 leading-tight">
+            Engineering systems that center<br className="hidden sm:block" /> on human need.
+          </h2>
 
-          <div className="space-y-6 font-body text-secondary-foreground text-lg leading-relaxed">
+          <div className="space-y-5 font-body text-secondary-foreground text-base leading-relaxed">
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              I engineer AI-powered systems designed around the people who use them. My work
-              bridges intelligent automation with intentional UX — from building a
-              healthcare decision-support engine to architecting platforms that serve
-              real communities with real constraints.
+              I work at the intersection of AI engineering and user experience — building
+              intelligent systems where the technology serves the person, not the other way
+              around. From healthcare decision-support engines to platforms serving
+              underserved communities, my work is grounded in real constraints and real impact.
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Through <span className="text-primary font-semibold">NextGenShe</span>, I
+              Through <span className="text-foreground font-medium">NextGenShe</span>, I
               founded a platform expanding educational access for women in underserved
-              Pakistani communities — proof that technology, when built with empathy, can
-              shift who gets opportunity.
+              Pakistani communities — demonstrating that technology built with empathy
+              can shift who gets opportunity.
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              I'm drawn to the hard problems at the intersection of machine intelligence
-              and human need. Ethical AI isn't a checkbox — it's a design constraint
-              that makes the work better.
+              Ethical AI isn't a checkbox — it's a design constraint that makes the work better.
             </motion.p>
           </div>
         </motion.div>

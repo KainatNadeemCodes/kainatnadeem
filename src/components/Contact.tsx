@@ -3,48 +3,48 @@ import { Mail, Linkedin, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-28 px-6">
+    <section id="contact" className="py-24 px-6">
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-mono text-primary text-sm tracking-widest uppercase mb-3">Get In Touch</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Contact</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Let's Build Something That Matters
-          </h3>
-          <p className="font-body text-muted-foreground mb-12 max-w-lg mx-auto">
+          </h2>
+          <p className="font-body text-muted-foreground text-base mb-10 max-w-md mx-auto leading-relaxed">
             Open to roles, collaborations, and partnerships at the intersection of AI, UX, and social impact.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             <a
               href="mailto:kainat.nadeem.work@gmail.com"
-              className="card-elevated px-6 py-4 flex items-center gap-3 group"
+              className="bg-card border border-border/50 rounded-lg px-5 py-3.5 flex items-center gap-3 hover:border-primary/30 transition-colors duration-200 group"
             >
-              <Mail size={18} className="text-primary" />
+              <Mail size={16} className="text-primary" />
               <span className="font-body text-foreground text-sm">kainat.nadeem.work@gmail.com</span>
-              <ArrowUpRight size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              <ArrowUpRight size={13} className="text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
               href="https://www.linkedin.com/in/kainat-nadeem-a9408b324"
               target="_blank"
               rel="noopener noreferrer"
-              className="card-elevated px-6 py-4 flex items-center gap-3 group"
+              className="bg-card border border-border/50 rounded-lg px-5 py-3.5 flex items-center gap-3 hover:border-primary/30 transition-colors duration-200 group"
             >
-              <Linkedin size={18} className="text-primary" />
+              <Linkedin size={16} className="text-primary" />
               <span className="font-body text-foreground text-sm">LinkedIn</span>
-              <ArrowUpRight size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              <ArrowUpRight size={13} className="text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
           </div>
         </motion.div>
       </div>
 
-      <div className="container mx-auto max-w-4xl mt-24 pt-8 border-t border-border/50 text-center">
-        <p className="text-muted-foreground text-xs font-mono">
-          © 2025 Kainat Nadeem — Built with intention.
+      <div className="container mx-auto max-w-3xl mt-20 pt-6 border-t border-border/30 text-center">
+        <p className="text-muted-foreground text-xs font-mono tracking-wide">
+          © 2025 Kainat Nadeem · Built with intention
         </p>
       </div>
     </section>
