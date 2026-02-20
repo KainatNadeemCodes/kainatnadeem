@@ -7,26 +7,26 @@ import projectHaven from "@/assets/project-haven.jpg";
 
 const projects = [
   {
-    title: "Smart Health Assistant",
+    title: "AI-Powered Smart Health Assistant",
     category: "AI Engineering",
-    summary: "AI-driven symptom analysis engine with ethical decision-support routing, designed for low-tech-literacy users.",
-    tech: ["Python", "Flask", "AI Algorithms", "HTML/CSS"],
+    summary: "Symptom analysis system using structured decision-routing logic, rule-based AI, and ethical human oversight constraints. Built with Python and Flask.",
+    tech: ["Python", "Flask", "Decision Logic", "System Architecture"],
     image: projectHealth,
     slug: "/case-study/smart-health-assistant",
   },
   {
     title: "NextGenShe",
-    category: "Social Impact",
-    summary: "Technology platform expanding educational access for women in underserved Pakistani communities through intentional design.",
-    tech: ["UX Research", "Web Design", "Platform Dev"],
+    category: "Systems Design · Social Impact",
+    summary: "Technology platform addressing educational access barriers for women in underserved communities through intentional systems design and socio-technical problem framing.",
+    tech: ["Platform Architecture", "UX Research", "Systems Design"],
     image: projectNextGenShe,
     slug: "/case-study/nextgenshe",
   },
   {
     title: "Haven",
-    category: "Inclusive UX",
-    summary: "Sensory-friendly digital platform for neurodivergent users — calm palettes, predictable navigation, reduced cognitive load.",
-    tech: ["UX Research", "Accessibility", "Inclusive Design"],
+    category: "Accessibility Research · Inclusive Design",
+    summary: "Sensory-friendly interface applying cognitive load theory, accessibility research, and structured UX decision-making to support neurodivergent users.",
+    tech: ["Cognitive Load Theory", "Accessibility", "UX Research"],
     image: projectHaven,
     slug: "/case-study/haven",
   },
@@ -46,7 +46,7 @@ const Projects = () => {
           className="mb-12"
         >
           <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Projects</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Selected Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Selected Projects</h2>
         </motion.div>
 
         <div className="space-y-6">
@@ -61,7 +61,6 @@ const Projects = () => {
               className="bg-card border border-border/50 rounded-xl overflow-hidden cursor-pointer group hover:border-primary/20 transition-colors duration-300"
             >
               <div className="grid md:grid-cols-5">
-                {/* Image */}
                 <div className="md:col-span-2 relative h-52 md:h-full overflow-hidden">
                   <img
                     src={project.image}
@@ -71,7 +70,6 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20" />
                 </div>
 
-                {/* Content */}
                 <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
                   <p className="font-mono text-primary/70 text-xs tracking-wider uppercase mb-2">{project.category}</p>
                   <h3 className="text-foreground font-bold text-xl mb-3">{project.title}</h3>

@@ -3,38 +3,38 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     period: "2026 – Present",
-    title: "Founder & UX Designer",
+    title: "Lead Designer & Researcher",
     org: "Haven",
     description:
-      "Designing a sensory-friendly digital platform for neurodivergent users. Leading accessibility-first interface design with calm, predictable interactions and inclusive design systems.",
+      "Leading accessibility research and inclusive system design for a sensory-friendly digital platform. Applying cognitive load theory and structured UX decision-making to support neurodivergent users.",
   },
   {
     period: "2025 – Present",
     title: "AI Engineer",
     org: "Smart Health Assistant",
     description:
-      "Architected an AI-driven symptom analysis engine with ethical decision-support logic. Built end-to-end with Python, Flask, and custom algorithms — designed around accessibility and data-driven health insights.",
+      "Designed and implemented an AI-driven symptom analysis system with structured decision-routing logic. Built end-to-end with Python and Flask, incorporating human oversight considerations and ethical AI boundaries.",
   },
   {
     period: "2024 – Present",
-    title: "Founder & Lead",
+    title: "Founder & Technical Lead",
     org: "NextGenShe",
     description:
-      "Founded a technology platform expanding educational access for women in underserved communities. Led the full product lifecycle from research through deployment.",
+      "Initiated and led the development of a technology platform expanding educational access for women in underserved communities. Responsible for systems design, platform architecture, and socio-technical problem framing.",
   },
   {
     period: "2024 – Present",
-    title: "Freelance UX & Frontend Engineer",
+    title: "Freelance Software & UX Engineer",
     org: "Independent",
     description:
-      "Delivered brand identities, interactive prototypes, and responsive interfaces. Applied UX research methodologies to drive usability using Figma, HTML/CSS, and modern frontend tooling.",
+      "Delivered responsive interfaces and interactive prototypes applying UX research methodologies and accessibility principles. Tools: Figma, HTML/CSS, modern frontend frameworks.",
   },
   {
     period: "2024",
     title: "Aspire Leadership Program",
     org: "Aspire Institute · Harvard Faculty",
     description:
-      "Applied design thinking to systemic social challenges with a global cohort. Deepened expertise in ethical leadership and cross-cultural technology strategy.",
+      "Applied structured design thinking to systemic social challenges within a global cohort. Developed expertise in ethical leadership and cross-cultural technology strategy.",
   },
 ];
 
@@ -50,11 +50,10 @@ const Experience = () => {
           className="mb-12"
         >
           <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Experience</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Where I've Built & Led</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Initiative & Leadership</h2>
         </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border/60" />
 
           <div className="space-y-8">
@@ -67,7 +66,6 @@ const Experience = () => {
                 transition={{ duration: 0.5, delay: i * 0.06 }}
                 className="relative pl-8"
               >
-                {/* Timeline dot */}
                 <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-primary/40 bg-background flex items-center justify-center">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 </div>

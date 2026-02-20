@@ -5,10 +5,12 @@ import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Research", href: "#research" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
+  { label: "Direction", href: "#direction" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -45,14 +47,14 @@ const Navbar = () => {
           K<span className="text-primary">.</span>N
         </button>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link, i) => (
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200 font-mono tracking-wide"
             >
-              <span className="text-primary/50 mr-1.5">0{i + 1}.</span>
+              <span className="text-primary/50 mr-1">0{i + 1}.</span>
               {link.label}
             </button>
           ))}

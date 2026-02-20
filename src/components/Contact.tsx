@@ -13,10 +13,10 @@ const Contact = () => {
         >
           <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Contact</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Let's Build Something That Matters
+            Open to Opportunities
           </h2>
           <p className="font-body text-muted-foreground text-base mb-10 max-w-md mx-auto leading-relaxed">
-            Open to roles, collaborations, and partnerships at the intersection of AI, UX, and social impact.
+            Available for MSc AI programmes, research collaborations, and STEM scholarship opportunities.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -44,7 +44,7 @@ const Contact = () => {
 
       <div className="container mx-auto max-w-3xl mt-20 pt-6 border-t border-border/30 text-center">
         <p className="text-muted-foreground text-xs font-mono tracking-wide">
-          © 2025 Kainat Nadeem · Built with intention
+          © 2025 Kainat Nadeem
         </p>
       </div>
     </section>

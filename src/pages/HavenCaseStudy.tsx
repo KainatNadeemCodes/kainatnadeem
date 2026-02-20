@@ -1,6 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import projectHaven from "@/assets/project-haven.jpg";
-import PageTransition from "@/components/PageTransition";
 
 const bullets = (items: string[]) => (
   <ul className="space-y-2">
@@ -19,53 +18,52 @@ const para = (text: string) => (
 
 const sections = [
   {
-    heading: "Problem",
+    heading: "Problem Statement",
     content: (
       <div className="space-y-3">
-        {para("Many digital products are overstimulating due to motion-heavy layouts, bright colors, and complex navigation.")}
-        {para("Neurodivergent users require predictable, low-arousal environments.")}
+        {para("Many digital products create overstimulating environments through motion-heavy layouts, high-contrast colours, and complex navigation. Neurodivergent users require predictable, low-arousal interfaces designed around cognitive load management.")}
       </div>
     ),
   },
   {
-    heading: "Research Insights",
+    heading: "Accessibility Research",
     content: bullets([
-      "Predictability reduces anxiety",
-      "Minimal animation improves focus",
-      "High contrast improves clarity",
-      "Cognitive load impacts usability",
+      "Investigated cognitive load theory as applied to interface design",
+      "Analysed the relationship between sensory input and user anxiety",
+      "Reviewed WCAG guidelines for motion, contrast, and interaction patterns",
+      "Studied neurodivergent user behaviour and environmental preferences",
     ]),
   },
   {
-    heading: "Design Goals",
+    heading: "Inclusive System Design Principles",
     content: bullets([
-      "Reduce sensory overload",
-      "Increase readability",
-      "Simplify navigation",
-      "Provide emotional regulation features",
+      "Single-focus screen architecture to reduce cognitive overload",
+      "Reduced navigation depth with predictable layout patterns",
+      "Motion-reduced interaction design respecting user preferences",
+      "Clear visual hierarchy with consistent spacing and typography",
     ]),
   },
   {
-    heading: "Wireframes & Layout Logic",
+    heading: "Structured UX Decision-Making",
     content: bullets([
-      "Reduced navigation depth",
-      "Single-focus screens",
-      "Clear visual hierarchy",
+      "Design decisions mapped to specific accessibility research findings",
+      "Touch-friendly spacing derived from motor accessibility guidelines",
+      "Colour palette constrained by WCAG contrast requirements",
+      "Emotional regulation features informed by behavioural research",
     ]),
   },
   {
-    heading: "Accessibility Strategy",
+    heading: "Constraints & Methodology",
     content: bullets([
-      "WCAG-informed contrast",
-      "Reduced motion preference",
-      "Touch-friendly spacing",
-      "Consistent layout patterns",
+      "Balancing aesthetic quality with strict accessibility constraints",
+      "Designing for diverse neurodivergent needs within a single system",
+      "Validating design decisions against cognitive load metrics",
     ]),
   },
   {
     heading: "Reflection",
     content: para(
-      "Haven strengthened my understanding that inclusive design is foundational, not optional."
+      "Haven deepened my understanding that inclusive design is a systematic discipline — requiring structured research, constrained decision-making, and continuous validation against real user needs."
     ),
   },
 ];
@@ -73,11 +71,11 @@ const sections = [
 const HavenCaseStudy = () => (
   <CaseStudyLayout
     title="Haven"
-    type="Inclusive UX Concept"
+    type="Accessibility Research · Inclusive Design"
     role="UX Researcher & Interface Designer"
-    tools="Figma, Lovable"
-    intro="Haven is a sensory-friendly digital interface designed to support neurodivergent users through calm, predictable, accessibility-first design principles."
-    category="Inclusive UX"
+    tools="Figma, Lovable, Accessibility Research"
+    intro="A sensory-friendly digital interface applying cognitive load theory, accessibility research, and structured UX decision-making to support neurodivergent users."
+    category="Inclusive Design"
     categoryColor="text-emerald-400 bg-emerald-400/10 border-emerald-400/25"
     heroImage={projectHaven}
     sections={sections}

@@ -4,21 +4,21 @@ import { Brain, Layout, Server } from "lucide-react";
 const pillars = [
   {
     icon: Brain,
-    title: "AI & Machine Learning",
-    description: "Designing intelligent systems with ethical decision-support logic.",
-    skills: ["Python", "Machine Learning", "AI Algorithms", "Data Visualization", "Predictive Modeling", "Flask"],
-  },
-  {
-    icon: Layout,
-    title: "Frontend & UX Engineering",
-    description: "Building interfaces grounded in research and accessibility.",
-    skills: ["JavaScript", "HTML/CSS", "Responsive Design", "Figma", "User Research", "Prototyping"],
+    title: "Artificial Intelligence & Machine Learning",
+    description: "Designing intelligent systems with structured decision logic and ethical constraints.",
+    skills: ["Python", "Machine Learning Fundamentals", "Predictive Modeling", "Data Preprocessing", "Algorithmic Thinking", "Data Visualization"],
   },
   {
     icon: Server,
-    title: "Backend & Systems",
-    description: "Architecting reliable data pipelines and APIs.",
-    skills: ["Django", "REST API", "MySQL", "SQLite", "MongoDB", "Git"],
+    title: "Software Engineering & Systems",
+    description: "Building reliable backend architectures, APIs, and data pipelines.",
+    skills: ["Flask", "Django", "REST APIs", "Database Design (MySQL, SQLite, MongoDB)", "System Architecture", "Git Version Control"],
+  },
+  {
+    icon: Layout,
+    title: "Human-Centered & Responsible Design",
+    description: "Applying research-driven methods to build accessible, ethical technology.",
+    skills: ["UX Research", "Accessibility Principles", "Ethical AI Constraints", "Decision-Support System Design", "Prototyping", "Usability Testing"],
   },
 ];
 
@@ -34,7 +34,7 @@ const Skills = () => {
           className="mb-12"
         >
           <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Toolkit</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Engineering Stack</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Technical Competencies</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-5">
