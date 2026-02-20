@@ -1,11 +1,19 @@
 import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, BookOpen } from "lucide-react";
 
 const certifications = [
   "Google UX Design Professional Certificate",
   "Google Prompting Essentials",
   "Coursera — AI for Everyone",
   "IBM Cyber-security Certificate",
+];
+
+const coursework = [
+  "Machine Learning",
+  "Data Structures & Algorithms",
+  "Database Systems",
+  "Human-Computer Interaction",
+  "Software Engineering Principles",
 ];
 
 const Education = () => {
@@ -28,7 +36,7 @@ const Education = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-card border border-border/50 rounded-xl p-6 mb-8"
+          className="bg-card border border-border/50 rounded-xl p-6 mb-6"
         >
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 mt-0.5">
@@ -47,11 +55,37 @@ const Education = () => {
           </div>
         </motion.div>
 
+        {/* Relevant Coursework */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="bg-card border border-border/50 rounded-xl p-6 mb-6"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
+              <BookOpen size={18} className="text-primary" />
+            </div>
+            <p className="text-foreground font-medium text-sm">Relevant Coursework</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {coursework.map((course) => (
+              <span
+                key={course}
+                className="bg-secondary text-secondary-foreground text-xs px-3 py-1.5 rounded-md font-mono"
+              >
+                {course}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
         >
           <p className="text-foreground font-medium text-sm mb-4">Certifications</p>
           <div className="flex flex-wrap gap-2">

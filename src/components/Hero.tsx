@@ -68,7 +68,7 @@ const Hero = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground mb-8"
         >
-          Human-Centered AI Product Engineer
+          AI-Focused Software Engineer · Aspiring MSc AI Researcher
         </motion.p>
 
         <motion.h1
@@ -95,7 +95,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
           className="font-body text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-12 leading-relaxed"
         >
-          Building intelligent systems designed around the people who use them.
+          Engineering intelligent systems with a focus on responsible AI, decision-support models, and human-centered design.
         </motion.p>
 
         <motion.div
@@ -112,7 +112,7 @@ const Hero = () => {
             }}
             className="bg-primary text-primary-foreground px-7 py-3 rounded-lg text-sm font-medium transition-all hover:opacity-90 flex items-center gap-2"
           >
-            View Work
+            View Projects
             <ArrowDown size={15} />
           </a>
           <button

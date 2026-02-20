@@ -1,6 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
-import PageTransition from "@/components/PageTransition";
 
 const bullets = (items: string[]) => (
   <ul className="space-y-2">
@@ -19,51 +18,50 @@ const para = (text: string) => (
 
 const sections = [
   {
-    heading: "Problem",
+    heading: "Problem Statement",
     content: (
       <div className="space-y-3">
-        {para("Many women face cultural and environmental barriers that limit access to education.")}
-        {para("There is a need for a discreet, accessible, and supportive digital learning platform.")}
+        {para("Women in conservative and underserved communities face cultural and environmental barriers that limit access to education. A discreet, accessible, and technically sound digital platform is needed to address this systemic gap.")}
       </div>
     ),
   },
   {
-    heading: "Research Insights",
+    heading: "Systems Design Approach",
     content: bullets([
-      "Privacy and safety are critical",
-      "Low-bandwidth accessibility matters",
-      "Clear navigation reduces friction",
-      "Trust is essential in design",
+      "Mobile-first platform architecture for low-bandwidth environments",
+      "Modular content delivery system for scalable curriculum management",
+      "Privacy-first design patterns for user safety and trust",
+      "Clear navigation structure to reduce cognitive friction",
     ]),
   },
   {
-    heading: "Design Goals",
+    heading: "Socio-Technical Problem Framing",
     content: bullets([
-      "Simple and intuitive layout",
-      "Low data usage",
-      "Mobile-first design",
-      "Emotional safety and inclusivity",
+      "Mapped cultural constraints to technical design decisions",
+      "Prioritised access expansion as the primary system objective",
+      "Designed for trust-building through transparency and simplicity",
+      "Balanced technological capability with real-world infrastructure limitations",
     ]),
   },
   {
-    heading: "UX Decisions",
+    heading: "Platform Architecture",
     content: bullets([
-      "Clean interface with minimal distractions",
-      "Clear content hierarchy",
-      "Accessible typography",
-      "Trust-centered messaging",
+      "Lightweight frontend optimised for minimal data usage",
+      "Structured content hierarchy for guided learning paths",
+      "Accessible typography and touch-friendly interface patterns",
+      "Scalable design supporting future localisation and language support",
     ]),
   },
   {
-    heading: "Impact Vision",
+    heading: "Impact & Methodology",
     content: para(
-      "NextGenShe uses technology as a tool for empowerment, access, and opportunity."
+      "NextGenShe demonstrates how technology can be systematically designed to reduce structural barriers — applying platform thinking to expand opportunity in underserved contexts."
     ),
   },
   {
     heading: "Reflection",
     content: para(
-      "This project reinforced my belief that technology should reduce barriers and expand opportunity, especially in underserved communities."
+      "This project reinforced the importance of socio-technical analysis in system design — understanding that technology solutions must account for cultural, economic, and infrastructural constraints to achieve meaningful impact."
     ),
   },
 ];
@@ -71,11 +69,11 @@ const sections = [
 const NextGenSheCaseStudy = () => (
   <CaseStudyLayout
     title="NextGenShe"
-    type="Social Impact EdTech Platform"
-    role="Founder, UX Strategist, Product Designer"
-    tools="UX Research, Web Design, Platform Development"
-    intro="NextGenShe is a digital platform designed to provide accessible educational resources to women in underserved and conservative communities."
-    category="Social Impact"
+    type="Systems Design · Social Impact"
+    role="Founder, Technical Lead, UX Strategist"
+    tools="UX Research, Systems Design, Platform Development"
+    intro="A technology platform designed to expand educational access for women in underserved communities through intentional systems design and socio-technical problem framing."
+    category="Systems Design"
     categoryColor="text-accent bg-accent/10 border-accent/25"
     heroImage={projectNextGenShe}
     sections={sections}

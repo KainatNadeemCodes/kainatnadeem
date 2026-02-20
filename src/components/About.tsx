@@ -12,7 +12,7 @@ const About = () => {
         >
           <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">About</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10 leading-tight">
-            Engineering systems that center<br className="hidden sm:block" /> on human need.
+            Building AI systems grounded in<br className="hidden sm:block" /> technical rigour and social responsibility.
           </h2>
 
           <div className="space-y-5 font-body text-secondary-foreground text-base leading-relaxed">
@@ -22,10 +22,11 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              I work at the intersection of AI engineering and user experience — building
-              intelligent systems where the technology serves the person, not the other way
-              around. From healthcare decision-support engines to platforms serving
-              underserved communities, my work is grounded in real constraints and real impact.
+              I am a final-year Software Engineering student with a focused interest in
+              artificial intelligence — particularly decision-support systems, responsible AI,
+              and access-focused technology. My work spans AI system design, full-stack
+              development, and UX research, always oriented toward real-world constraints
+              and measurable impact.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -33,18 +34,20 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Through <span className="text-foreground font-medium">NextGenShe</span>, I
-              founded a platform expanding educational access for women in underserved
-              Pakistani communities — demonstrating that technology built with empathy
-              can shift who gets opportunity.
+              Through projects like an AI-powered health assistant and a platform expanding
+              educational access for women in underserved communities, I have developed
+              practical experience in system architecture, ethical AI constraints, and
+              human-centered design methodology.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-foreground font-medium"
             >
-              Ethical AI isn't a checkbox — it's a design constraint that makes the work better.
+              I am preparing to pursue an MSc in Artificial Intelligence to deepen my
+              expertise in machine learning, intelligent systems, and ethical AI development.
             </motion.p>
           </div>
         </motion.div>
