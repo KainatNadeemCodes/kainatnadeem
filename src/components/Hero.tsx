@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown, Download, Github } from "lucide-react";
 import { downloadResume } from "@/lib/resume";
 import NeuralCanvas from "@/components/NeuralCanvas";
 
@@ -122,6 +122,15 @@ const Hero = () => {
             <Download size={15} className="text-primary" />
             Resume
           </button>
+          <a
+            href="https://github.com/ItxUniverseCodes"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-border/60 bg-card/40 backdrop-blur-sm px-7 py-3 rounded-lg text-sm font-medium text-foreground hover:border-primary/40 transition-all flex items-center gap-2"
+          >
+            <Github size={15} className="text-primary" />
+            GitHub
+          </a>
         </motion.div>
       </div>
 

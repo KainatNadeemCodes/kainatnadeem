@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -36,6 +36,16 @@ const Contact = () => {
             >
               <Linkedin size={16} className="text-primary" />
               <span className="font-body text-foreground text-sm">LinkedIn</span>
+              <ArrowUpRight size={13} className="text-muted-foreground group-hover:text-primary transition-colors" />
+            </a>
+            <a
+              href="https://github.com/ItxUniverseCodes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-card border border-border/50 rounded-lg px-5 py-3.5 flex items-center gap-3 hover:border-primary/30 transition-colors duration-200 group"
+            >
+              <Github size={16} className="text-primary" />
+              <span className="font-body text-foreground text-sm">GitHub</span>
               <ArrowUpRight size={13} className="text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
           </div>
