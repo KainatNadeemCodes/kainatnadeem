@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
@@ -13,6 +13,8 @@ const projects = [
     tech: ["Python", "Flask", "Decision Logic", "System Architecture"],
     image: projectHealth,
     slug: "/case-study/smart-health-assistant",
+    liveUrl: null,
+    repoUrl: "https://github.com/ItxUniverseCodes",
   },
   {
     title: "NextGenShe",
@@ -21,6 +23,8 @@ const projects = [
     tech: ["Platform Architecture", "UX Research", "Systems Design"],
     image: projectNextGenShe,
     slug: "/case-study/nextgenshe",
+    liveUrl: "https://women-edu-first.vercel.app",
+    repoUrl: null,
   },
   {
     title: "Haven",
@@ -29,6 +33,8 @@ const projects = [
     tech: ["Cognitive Load Theory", "Accessibility", "UX Research"],
     image: projectHaven,
     slug: "/case-study/haven",
+    liveUrl: "https://safespacehaven.lovable.app",
+    repoUrl: null,
   },
 ];
 
@@ -88,10 +94,34 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div>
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center gap-1.5 text-primary text-xs font-medium group-hover:gap-2.5 transition-all duration-200">
                       View Case Study <ArrowRight size={13} />
                     </span>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200"
+                      >
+                        <ExternalLink size={12} />
+                        Live Preview
+                      </a>
+                    )}
+                    {project.repoUrl && (
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200"
+                      >
+                        <Github size={12} />
+                        View Code
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

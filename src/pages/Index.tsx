@@ -7,6 +7,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import FutureDirection from "@/components/FutureDirection";
+import Repositories from "@/components/Repositories";
 import Contact from "@/components/Contact";
 import PageTransition from "@/components/PageTransition";
 
@@ -23,6 +24,7 @@ const Index = () => {
         <Projects />
         <Education />
         <FutureDirection />
+        <Repositories />
         <Contact />
       </div>
     </PageTransition>
