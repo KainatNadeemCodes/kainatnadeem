@@ -123,7 +123,7 @@ const Hero = () => {
             Resume
           </button>
           <a
-            href="https://github.com/ItxUniverseCodes"
+            href="https://github.com/KainatNadeemCodes"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-border/60 bg-card/40 backdrop-blur-sm px-7 py-3 rounded-lg text-sm font-medium text-foreground hover:border-primary/40 transition-all flex items-center gap-2"
