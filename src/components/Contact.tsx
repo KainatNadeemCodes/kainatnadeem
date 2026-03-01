@@ -39,7 +39,7 @@ const Contact = () => {
               <ArrowUpRight size={13} className="text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
-              href="https://github.com/ItxUniverseCodes"
+              href="https://github.com/KainatNadeemCodes"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-card border border-border/50 rounded-lg px-5 py-3.5 flex items-center gap-3 hover:border-primary/30 transition-colors duration-200 group"
