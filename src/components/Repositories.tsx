@@ -20,15 +20,15 @@ const Repositories = () => {
           </p>
 
           <a
-            href="https://github.com/ItxUniverseCodes"
+            href="https://github.com/KainatNadeemCodes"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-card border border-border/50 rounded-lg px-6 py-4 hover:border-primary/30 transition-colors duration-200 group"
           >
             <Github size={20} className="text-primary" />
             <div>
-              <p className="font-mono text-foreground text-sm font-medium">ItxUniverseCodes</p>
-              <p className="text-muted-foreground text-xs mt-0.5">github.com/ItxUniverseCodes</p>
+              <p className="font-mono text-foreground text-sm font-medium">KainatNadeemCodes</p>
+              <p className="text-muted-foreground text-xs mt-0.5">github.com/KainatNadeemCodes</p>
             </div>
             <ArrowUpRight size={14} className="text-muted-foreground group-hover:text-primary transition-colors ml-2" />
           </a>
