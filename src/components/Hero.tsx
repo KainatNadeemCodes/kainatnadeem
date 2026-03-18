@@ -11,8 +11,8 @@ const roles = [
 ];
 
 const stats = [
-  { value: "3.93", label: "CGPA · Top 1%" },
-  { value: "6yr",  label: "PEEF Scholar"  },
+  { value: "3.93", label: "CGPA · Top 1%"  },
+  { value: "6yr",  label: "PEEF Scholar"   },
   { value: "4K+",  label: "Hackathon Pool" },
   { value: "4",    label: "Live Projects"  },
 ];
@@ -21,54 +21,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
 
-      {/* ── Layer 1: Neural node canvas ── */}
+      {/* ── Enhanced neural canvas (bg + nodes + connections + cursor glow) ── */}
       <NeuralCanvas />
-
-      {/* ── Layer 2: Subtle dot grid ── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle, hsl(220 90% 70% / 0.05) 1px, transparent 1px)`,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      {/* ── Layer 3: Soft vignette ── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, hsl(var(--background)) 100%)",
-        }}
-      />
-
-      {/* ── Layer 4: Edge fade ── */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
-      </div>
-
-      {/* ── Layer 5: Ambient orbs ── */}
-      <div
-        className="orb-drift-1 absolute pointer-events-none"
-        style={{
-          top: "25%", left: "15%",
-          width: 480, height: 480,
-          borderRadius: "50%",
-          background: "hsl(220 90% 60% / 0.04)",
-          filter: "blur(120px)",
-        }}
-      />
-      <div
-        className="orb-drift-2 absolute pointer-events-none"
-        style={{
-          bottom: "20%", right: "15%",
-          width: 380, height: 380,
-          borderRadius: "50%",
-          background: "hsl(260 70% 60% / 0.035)",
-          filter: "blur(110px)",
-        }}
-      />
 
       {/* ── Content ── */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -205,7 +159,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <div className="w-5 h-9 rounded-full border border-muted-foreground/20 flex justify-center pt-2">
           <motion.div
