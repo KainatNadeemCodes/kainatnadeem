@@ -2,7 +2,7 @@
 
 Personal portfolio website of **Kainat Nadeem** — AI Engineer, Frontend Developer, UX Designer, and Social Impact Technologist. Built to support MSc AI applications and STEM scholarship opportunities.
 
-🔗 **Live:** [kainat-nadeem.vercel.app](https://kainat-nadeem.vercel.app) *(update with your actual URL)*
+🔗 **Live:** [kainat-nadeem.vercel.app](https://kainatnadeem.vercel.app)
 
 ---
 
