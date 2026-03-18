@@ -20,7 +20,6 @@ const Index = () => {
         <Navbar />
         <Hero />
         <ProofStrip />
-        <Highlights />
         <About />
         <ProblemApproach />
         <ResearchInterests />
