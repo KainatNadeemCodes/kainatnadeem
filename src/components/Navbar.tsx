@@ -4,14 +4,14 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Research", href: "#research" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Direction", href: "#direction" },
-  { label: "Contact", href: "#contact" },
+  { label: "About",      href: "#about"        },
+  { label: "Approach",   href: "#approach"      },
+  { label: "Research",   href: "#research"      },
+  { label: "Skills",     href: "#skills"        },
+  { label: "Experience", href: "#experience"    },
+  { label: "Projects",   href: "#projects"      },
+  { label: "Education",  href: "#education"     },
+  { label: "Contact",    href: "#contact"       },
 ];
 
 const scrollToSection = (href: string) => {
@@ -23,9 +23,9 @@ const scrollToSection = (href: string) => {
 };
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggle } = useTheme();
+  const [scrolled, setScrolled]   = useState(false);
+  const [menuOpen, setMenuOpen]   = useState(false);
+  const { theme, toggle }         = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -36,10 +36,14 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/40 py-3" : "py-5"
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/40 py-3"
+          : "py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
+
+        {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="font-mono text-sm text-foreground tracking-tight"
@@ -47,7 +51,8 @@ const Navbar = () => {
           K<span className="text-primary">.</span>N
         </button>
 
-        <div className="hidden md:flex items-center gap-7">
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link, i) => (
             <button
               key={link.href}
@@ -60,6 +65,7 @@ const Navbar = () => {
           ))}
         </div>
 
+        {/* Theme toggle + mobile menu */}
         <div className="flex items-center gap-3">
           <motion.button
             onClick={toggle}
@@ -72,8 +78,8 @@ const Navbar = () => {
                 <motion.span
                   key="sun"
                   initial={{ opacity: 0, rotate: -20, scale: 0.8 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  exit={{ opacity: 0, rotate: 20, scale: 0.8 }}
+                  animate={{ opacity: 1, rotate: 0,   scale: 1   }}
+                  exit={{    opacity: 0, rotate:  20, scale: 0.8 }}
                   transition={{ duration: 0.15 }}
                   className="absolute"
                 >
@@ -82,9 +88,9 @@ const Navbar = () => {
               ) : (
                 <motion.span
                   key="moon"
-                  initial={{ opacity: 0, rotate: 20, scale: 0.8 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  exit={{ opacity: 0, rotate: -20, scale: 0.8 }}
+                  initial={{ opacity: 0, rotate:  20, scale: 0.8 }}
+                  animate={{ opacity: 1, rotate:   0, scale: 1   }}
+                  exit={{    opacity: 0, rotate: -20, scale: 0.8 }}
                   transition={{ duration: 0.15 }}
                   className="absolute"
                 >
@@ -94,18 +100,22 @@ const Navbar = () => {
             </AnimatePresence>
           </motion.button>
 
-          <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            exit={{    opacity: 0, height: 0      }}
             className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/40"
           >
             <div className="container mx-auto px-6 py-4 flex flex-col gap-1">
