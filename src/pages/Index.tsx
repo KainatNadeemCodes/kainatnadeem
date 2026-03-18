@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofStrip from "@/components/ProofStrip";
-import Highlights from "@/components/Highlights";
 import About from "@/components/About";
 import ProblemApproach from "@/components/ProblemApproach";
 import ResearchInterests from "@/components/ResearchInterests";
