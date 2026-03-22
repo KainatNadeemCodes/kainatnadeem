@@ -4,10 +4,10 @@ import { downloadResume } from "@/lib/resume";
 import NeuralCanvas from "@/components/NeuralCanvas";
 
 const roles = [
-  { icon: Brain,   label: "AI Engineer",               color: "text-blue-400",    bg: "bg-blue-400/10",    border: "border-blue-400/20"    },
-  { icon: Code2,   label: "Frontend Developer",         color: "text-violet-400",  bg: "bg-violet-400/10",  border: "border-violet-400/20"  },
-  { icon: Palette, label: "UX Designer",                color: "text-pink-400",    bg: "bg-pink-400/10",    border: "border-pink-400/20"    },
-  { icon: Globe,   label: "Social Impact Technologist", color: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/20" },
+  { icon: Brain,   label: "AI Engineer",               color: "text-blue-400",    bg: "bg-blue-400/10",    border: "border-blue-400/20",    href: "#skills"    },
+  { icon: Code2,   label: "Frontend Developer",         color: "text-violet-400",  bg: "bg-violet-400/10",  border: "border-violet-400/20",  href: "#skills"    },
+  { icon: Palette, label: "UX Designer",                color: "text-pink-400",    bg: "bg-pink-400/10",    border: "border-pink-400/20",    href: "#skills"    },
+  { icon: Globe,   label: "Social Impact Technologist", color: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/20", href: "#projects"  },
 ];
 
 const stats = [
@@ -17,14 +17,16 @@ const stats = [
   { value: "4",    label: "Live Projects"  },
 ];
 
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
 
-      {/* ── Enhanced neural canvas (bg + nodes + connections + cursor glow) ── */}
       <NeuralCanvas />
 
-      {/* ── Content ── */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
 
         {/* Eyebrow */}
@@ -57,7 +59,7 @@ const Hero = () => {
           className="w-12 h-px bg-primary/40 mx-auto mb-6"
         />
 
-        {/* Role pills */}
+        {/* Role pills — clickable, cursor-pointer */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,22 +69,24 @@ const Hero = () => {
           {roles.map((role, i) => {
             const Icon = role.icon;
             return (
-              <motion.span
+              <motion.button
                 key={role.label}
+                onClick={() => scrollTo(role.href.replace("#", ""))}
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.35, delay: 0.32 + i * 0.07 }}
                 whileHover={{ scale: 1.06, transition: { duration: 0.15 } }}
-                className={`inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-full border backdrop-blur-sm ${role.color} ${role.bg} ${role.border}`}
+                whileTap={{ scale: 0.97 }}
+                className={`inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-full border backdrop-blur-sm cursor-pointer ${role.color} ${role.bg} ${role.border}`}
               >
                 <Icon size={11} />
                 {role.label}
-              </motion.span>
+              </motion.button>
             );
           })}
         </motion.div>
 
-        {/* ── Headline + Subheading (Option C) ── */}
+        {/* Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,6 +97,7 @@ const Hero = () => {
           <span className="text-gradient">human understanding.</span>
         </motion.h2>
 
+        {/* Subheading */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -117,16 +122,16 @@ const Hero = () => {
             href="#projects"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              scrollTo("projects");
             }}
-            className="bg-primary text-primary-foreground px-7 py-3 rounded-lg text-sm font-medium transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/20 flex items-center gap-2"
+            className="bg-primary text-primary-foreground px-7 py-3 rounded-lg text-sm font-medium transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/20 flex items-center gap-2 cursor-pointer"
           >
             View Projects
             <ArrowDown size={15} />
           </a>
           <button
             onClick={downloadResume}
-            className="border border-border/60 bg-card/40 backdrop-blur-sm px-7 py-3 rounded-lg text-sm font-medium text-foreground hover:border-primary/40 hover:bg-card/60 transition-all flex items-center gap-2"
+            className="border border-border/60 bg-card/40 backdrop-blur-sm px-7 py-3 rounded-lg text-sm font-medium text-foreground hover:border-primary/40 hover:bg-card/60 transition-all flex items-center gap-2 cursor-pointer"
           >
             <Download size={15} className="text-primary" />
             Resume
@@ -135,7 +140,7 @@ const Hero = () => {
             href="https://github.com/KainatNadeemCodes"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-border/60 bg-card/40 backdrop-blur-sm px-7 py-3 rounded-lg text-sm font-medium text-foreground hover:border-primary/40 hover:bg-card/60 transition-all flex items-center gap-2"
+            className="border border-border/60 bg-card/40 backdrop-blur-sm px-7 py-3 rounded-lg text-sm font-medium text-foreground hover:border-primary/40 hover:bg-card/60 transition-all flex items-center gap-2 cursor-pointer"
           >
             <Github size={15} className="text-primary" />
             GitHub
@@ -165,7 +170,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* ── Scroll indicator ── */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
