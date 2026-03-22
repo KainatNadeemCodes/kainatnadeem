@@ -82,16 +82,27 @@ const Hero = () => {
           })}
         </motion.div>
 
-        {/* Tagline */}
+        {/* ── Headline + Subheading (Option C) ── */}
+        <motion.h2
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.36, ease: "easeOut" }}
+          className="text-2xl md:text-3xl font-bold text-foreground max-w-2xl mx-auto mb-4 leading-snug tracking-tight"
+        >
+          Where rigorous engineering meets{" "}
+          <span className="text-gradient">human understanding.</span>
+        </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.38, ease: "easeOut" }}
-          className="font-body text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.44, ease: "easeOut" }}
+          className="font-body text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          Building intelligent systems with purpose —{" "}
+          I build AI-powered systems and design interfaces for the people
+          who need them most —{" "}
           <span className="text-foreground font-medium">
-            where rigorous engineering meets human impact.
+            families, children, and underserved communities.
           </span>
         </motion.p>
 
@@ -99,7 +110,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.48, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.52, ease: "easeOut" }}
           className="flex flex-wrap items-center justify-center gap-3 mb-14"
         >
           <a
@@ -135,7 +146,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.58, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.62, ease: "easeOut" }}
           className="inline-flex items-center gap-0 bg-card/40 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden"
         >
           {stats.map((stat, i) => (
