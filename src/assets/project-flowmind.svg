@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1200"/>
+      <stop offset="100%" stop-color="#0c0a00"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="40%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="65%" r="45%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow1)"/>
+  <rect width="800" height="500" fill="url(#glow2)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#f59e0b08" stroke-width="0.5">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Brain / flow nodes -->
+  <!-- Top node: User Intent -->
+  <rect x="310" y="50" width="180" height="44" rx="8" fill="#f59e0b18" stroke="#f59e0b50" stroke-width="1.2"/>
+  <text x="400" y="68" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="9" opacity="0.7">USER INTENT</text>
+  <text x="400" y="84" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold">FlowMind AI</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="94" x2="400" y2="130" stroke="#f59e0b50" stroke-width="1.2"/>
+  <polygon points="396,128 404,128 400,134" fill="#f59e0b50"/>
+
+  <!-- LLM box -->
+  <rect x="270" y="130" width="260" height="50" rx="8" fill="#8b5cf618" stroke="#8b5cf660" stroke-width="1.2"/>
+  <text x="400" y="150" text-anchor="middle" fill="#c4b5fd" font-family="monospace" font-size="9" opacity="0.7">REASONING ENGINE</text>
+  <text x="400" y="168" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="11" font-weight="bold">LLM · Context Aware</text>
+
+  <!-- Fork lines -->
+  <line x1="400" y1="180" x2="400" y2="205" stroke="#f59e0b40" stroke-width="1"/>
+  <line x1="400" y1="205" x2="200" y2="230" stroke="#f59e0b35" stroke-width="1"/>
+  <line x1="400" y1="205" x2="400" y2="230" stroke="#f59e0b35" stroke-width="1"/>
+  <line x1="400" y1="205" x2="600" y2="230" stroke="#f59e0b35" stroke-width="1"/>
+
+  <!-- 3 output modules -->
+  <rect x="110" y="230" width="175" height="46" rx="6" fill="#f59e0b12" stroke="#f59e0b40" stroke-width="1"/>
+  <text x="197" y="248" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="8" opacity="0.7">FOCUS OPTIMIZER</text>
+  <text x="197" y="265" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="10">Flow State ↑</text>
+
+  <rect x="312" y="230" width="175" height="46" rx="6" fill="#8b5cf612" stroke="#8b5cf640" stroke-width="1"/>
+  <text x="400" y="248" text-anchor="middle" fill="#c4b5fd" font-family="monospace" font-size="8" opacity="0.7">TASK PLANNER</text>
+  <text x="400" y="265" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">Smart Sequencing</text>
+
+  <rect x="514" y="230" width="175" height="46" rx="6" fill="#f59e0b12" stroke="#f59e0b40" stroke-width="1"/>
+  <text x="601" y="248" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="8" opacity="0.7">LOAD MONITOR</text>
+  <text x="601" y="265" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="10">Cognitive Load</text>
+
+  <!-- Converge lines -->
+  <line x1="197" y1="276" x2="197" y2="300" stroke="#f59e0b30" stroke-width="1"/>
+  <line x1="400" y1="276" x2="400" y2="300" stroke="#f59e0b30" stroke-width="1"/>
+  <line x1="601" y1="276" x2="601" y2="300" stroke="#f59e0b30" stroke-width="1"/>
+  <line x1="197" y1="300" x2="601" y2="300" stroke="#f59e0b30" stroke-width="1"/>
+  <line x1="400" y1="300" x2="400" y2="320" stroke="#f59e0b40" stroke-width="1"/>
+
+  <!-- Output -->
+  <rect x="270" y="320" width="260" height="46" rx="8" fill="#f59e0b20" stroke="#f59e0b60" stroke-width="1.4"/>
+  <text x="400" y="339" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="9" opacity="0.7">ADAPTIVE OUTPUT</text>
+  <text x="400" y="356" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="11" font-weight="bold">Personalised Workflow</text>
+
+  <!-- Progress bars (visual flair) -->
+  <text x="120" y="400" fill="#f59e0b60" font-family="monospace" font-size="8">Focus</text>
+  <rect x="155" y="392" width="130" height="6" rx="3" fill="#f59e0b15"/>
+  <rect x="155" y="392" width="98" height="6" rx="3" fill="#f59e0b80"/>
+
+  <text x="320" y="400" fill="#8b5cf660" font-family="monospace" font-size="8">Tasks</text>
+  <rect x="355" y="392" width="130" height="6" rx="3" fill="#8b5cf615"/>
+  <rect x="355" y="392" width="80" height="6" rx="3" fill="#8b5cf680"/>
+
+  <text x="520" y="400" fill="#f59e0b60" font-family="monospace" font-size="8">Energy</text>
+  <rect x="558" y="392" width="130" height="6" rx="3" fill="#f59e0b15"/>
+  <rect x="558" y="392" width="110" height="6" rx="3" fill="#f59e0b80"/>
+
+  <!-- Label -->
+  <text x="400" y="445" text-anchor="middle" fill="#fbbf2450" font-family="monospace" font-size="11" letter-spacing="4">FLOWMIND AI · PRODUCTIVITY</text>
+  <text x="400" y="465" text-anchor="middle" fill="#f59e0b35" font-family="monospace" font-size="8">Python · LLM APIs · React · FastAPI · Cognitive Systems</text>
+</svg>
