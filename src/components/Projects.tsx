@@ -189,7 +189,7 @@ const projects = [
     cta: "View Live Experience",
     ctaSecondary: "See It in Action",
     tech: ["React.js", "TypeScript", "Figma", "Inclusive UI"],
-    image: null,
+    image: project-shesphere,
     slug: null,
     liveUrl: null,
     repoUrl: "https://github.com/KainatNadeemCodes",
@@ -209,6 +209,7 @@ const comingSoon = [
     summary: "Making user experiences smarter with intelligent assistance — AI that optimises your workflow around how you actually think, not how apps expect you to.",
     tags: ["🤖 AI", "🧠 UX Case Study"],
     tech: ["Python", "LLM APIs", "React", "FastAPI", "Cognitive Systems"],
+    image: project-flowmind,
     accentColor: "amber",
     archLabel: "Workflow Engine",
     ArchDiagram: () => (
@@ -239,6 +240,7 @@ const comingSoon = [
     summary: "Real-time disaster intelligence powered by AI classification — designed to reach the people who need warning most, before it's too late.",
     tags: ["🤖 AI", "🌍 Social Impact"],
     tech: ["Python", "Real-time APIs", "ML Classification", "React", "Geospatial Data"],
+    image: project-disaster-watcher,
     accentColor: "orange",
     archLabel: "Real-Time Pipeline",
     ArchDiagram: () => (
