@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofStrip from "@/components/ProofStrip";
+import ScholarshipSignal from "@/components/ScholarshipSignal";
 import About from "@/components/About";
 import ProblemApproach from "@/components/ProblemApproach";
 import ResearchInterests from "@/components/ResearchInterests";
@@ -20,6 +21,7 @@ const Index = () => {
         <Navbar />
         <Hero />
         <ProofStrip />
+        <ScholarshipSignal />
         <About />
         <ProblemApproach />
         <ResearchInterests />
