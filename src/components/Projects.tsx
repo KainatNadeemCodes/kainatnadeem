@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
 import projectHaven from "@/assets/project-haven.jpg";
+import projectSheSphere    from "@/assets/project-shesphere.svg";
+import projectFlowMind     from "@/assets/project-flowmind.svg";
+import projectDisasterWatch from "@/assets/project-disaster-watcher.svg";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Identity tag config
