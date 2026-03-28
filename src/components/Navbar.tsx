@@ -4,14 +4,14 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
-  { label: "About",       href: "#about"        },
-  { label: "Why Me",      href: "#scholarship"  },
-  { label: "Approach",    href: "#approach"     },
-  { label: "Skills",      href: "#skills"       },
-  { label: "Experience",  href: "#experience"   },
-  { label: "Projects",    href: "#projects"     },
-  { label: "Education",   href: "#education"    },
-  { label: "Contact",     href: "#contact"      },
+  { label: "About",        href: "#about"         },
+  { label: "Why Me",       href: "#scholarship"   },
+  { label: "Community",    href: "#testimonials"  },
+  { label: "Skills",       href: "#skills"        },
+  { label: "Experience",   href: "#experience"    },
+  { label: "Projects",     href: "#projects"      },
+  { label: "Education",    href: "#education"     },
+  { label: "Contact",      href: "#contact"       },
 ];
 
 const scrollToSection = (href: string) => {
@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="font-mono text-sm text-foreground tracking-tight"
+          className="font-mono text-sm text-foreground tracking-tight cursor-pointer"
         >
           K<span className="text-primary">.</span>N
         </button>
@@ -73,7 +73,7 @@ const Navbar = () => {
             onClick={toggle}
             whileTap={{ scale: 0.88 }}
             aria-label="Toggle theme"
-            className="relative w-8 h-8 flex items-center justify-center rounded-md border border-border/50 bg-card/40 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200"
+            className="relative w-8 h-8 flex items-center justify-center rounded-md border border-border/50 bg-card/40 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer"
           >
             <AnimatePresence mode="wait" initial={false}>
               {theme === "dark" ? (
@@ -88,7 +88,10 @@ const Navbar = () => {
             </AnimatePresence>
           </motion.button>
 
-          <button className="md:hidden text-foreground cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="md:hidden text-foreground cursor-pointer"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
