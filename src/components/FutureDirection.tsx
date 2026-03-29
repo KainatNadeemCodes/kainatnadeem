@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, FlaskConical, Microscope, Globe, Heart, Eye } from "lucide-react";
+import { Target, FlaskConical, Microscope, Globe, Heart, Eye, ArrowUpRight, BookOpen } from "lucide-react";
 
 const researchAreas = [
   {
@@ -60,17 +60,18 @@ const FutureDirection = () => {
           <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3">Direction</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Research Direction</h2>
           <p className="font-body text-muted-foreground text-sm mt-3 leading-relaxed max-w-lg">
-            Targeting an MSc in Artificial Intelligence — at the intersection of ethical AI, intelligent systems, and technology for social good.
+            Targeting an MSc in Artificial Intelligence — at the intersection of ethical AI,
+            intelligent systems, and technology for social good.
           </p>
         </motion.div>
 
-        {/* Target card */}
+        {/* Academic Goal card */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="group relative bg-card border border-primary/20 rounded-xl p-5 mb-6 hover:border-primary/35 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+          className="group relative bg-card border border-primary/20 rounded-xl p-5 mb-5 hover:border-primary/35 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
         >
           <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           <div className="flex items-start gap-4">
@@ -78,14 +79,85 @@ const FutureDirection = () => {
               <Target size={16} className="text-primary" />
             </div>
             <div>
-              <p className="font-mono text-primary text-[10px] tracking-[0.15em] uppercase mb-1">Academic Goal</p>
+              <p className="font-mono text-primary text-[10px] tracking-[0.15em] uppercase mb-1">
+                Academic Goal
+              </p>
               <p className="text-foreground font-medium text-sm leading-relaxed">
                 MSc in Artificial Intelligence — Brunel University London
               </p>
               <p className="text-muted-foreground text-xs mt-1 leading-relaxed font-body">
                 Deepening expertise in machine learning, intelligent systems, fairness-aware models,
-                and responsible AI deployment in real-world contexts.
+                and responsible AI deployment — to scale the work already started with NextGenShe,
+                Haven, and SheSphere.
               </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ── Faculty Alignment Card — Dr Asieh Tabaghdehi ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.14 }}
+          className="group relative bg-card border border-violet-400/25 rounded-xl p-5 mb-6 hover:border-violet-400/40 hover:shadow-lg hover:shadow-violet-400/5 transition-all duration-300"
+        >
+          <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-violet-400/50 to-transparent" />
+
+          <div className="flex items-start gap-4">
+            <div className="w-9 h-9 rounded-lg bg-violet-400/8 border border-violet-400/20 flex items-center justify-center shrink-0 mt-0.5">
+              <BookOpen size={15} className="text-violet-400" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-mono text-violet-400 text-[10px] tracking-[0.15em] uppercase mb-1">
+                Faculty Alignment · Brunel Centre for AI: Social and Digital Innovation
+              </p>
+
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                <p className="text-foreground font-semibold text-sm">
+                  Dr Asieh Tabaghdehi
+                </p>
+                <a
+                  href="https://www.brunel.ac.uk/research/Projects/Towards-a-responsible-AI-and-inclusive-workforce-in-a-digital-economy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 text-violet-400 text-[10px] font-mono hover:text-violet-300 transition-colors cursor-pointer"
+                >
+                  View Research <ArrowUpRight size={10} />
+                </a>
+              </div>
+
+              <p className="text-muted-foreground text-[10px] font-mono mb-3">
+                Senior Lecturer · Head of AI & Technology Management Research Group ·
+                Lead, Centre for AI: Social and Digital Innovation · Brunel University London
+              </p>
+
+              <p className="text-secondary-foreground text-xs leading-relaxed font-body mb-3">
+                Dr Tabaghdehi's research focuses on responsible AI, ethical AI frameworks,
+                fairness in the digital economy, and inclusive workforce development —
+                directly intersecting with my work on NextGenShe, Haven, and the Smart Health
+                Assistant. Her project on responsible AI and inclusive workforce in the digital
+                economy mirrors the exact problems I have been building solutions for since 2024.
+              </p>
+
+              {/* Alignment tags */}
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  'Responsible AI',
+                  'Ethical AI Frameworks',
+                  'Inclusive Digital Economy',
+                  'AI & Social Inequality',
+                  'Human-Centred AI',
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-violet-400/10 border border-violet-400/25 text-violet-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -108,13 +180,14 @@ const FutureDirection = () => {
                   <Icon size={14} className={area.color} />
                 </div>
                 <div>
-                  <p className={`font-semibold text-sm text-foreground mb-0.5`}>{area.title}</p>
+                  <p className="font-semibold text-sm text-foreground mb-0.5">{area.title}</p>
                   <p className="text-muted-foreground text-xs leading-relaxed font-body">{area.detail}</p>
                 </div>
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
