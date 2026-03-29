@@ -4,14 +4,14 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
-  { label: "About",        href: "#about"         },
-  { label: "Why Me",       href: "#scholarship"   },
-  { label: "Community",    href: "#testimonials"  },
-  { label: "Skills",       href: "#skills"        },
-  { label: "Experience",   href: "#experience"    },
-  { label: "Projects",     href: "#projects"      },
-  { label: "Education",    href: "#education"     },
-  { label: "Contact",      href: "#contact"       },
+  { label: "About",      href: "#about"       },
+  { label: "Why Me",     href: "#scholarship" },
+  { label: "Community",  href: "#testimonials"},
+  { label: "Skills",     href: "#skills"      },
+  { label: "Experience", href: "#experience"  },
+  { label: "Projects",   href: "#projects"    },
+  { label: "Writing",    href: "#writing"     },
+  { label: "Contact",    href: "#contact"     },
 ];
 
 const scrollToSection = (href: string) => {
@@ -41,7 +41,6 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
 
-        {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="font-mono text-sm text-foreground tracking-tight cursor-pointer"
@@ -49,7 +48,6 @@ const Navbar = () => {
           K<span className="text-primary">.</span>N
         </button>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link, i) => (
             <button
@@ -67,7 +65,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Theme + mobile */}
         <div className="flex items-center gap-3">
           <motion.button
             onClick={toggle}
@@ -77,11 +74,19 @@ const Navbar = () => {
           >
             <AnimatePresence mode="wait" initial={false}>
               {theme === "dark" ? (
-                <motion.span key="sun" initial={{ opacity:0,rotate:-20,scale:0.8 }} animate={{ opacity:1,rotate:0,scale:1 }} exit={{ opacity:0,rotate:20,scale:0.8 }} transition={{ duration:0.15 }} className="absolute">
+                <motion.span key="sun"
+                  initial={{ opacity:0,rotate:-20,scale:0.8 }}
+                  animate={{ opacity:1,rotate:0,scale:1 }}
+                  exit={{ opacity:0,rotate:20,scale:0.8 }}
+                  transition={{ duration:0.15 }} className="absolute">
                   <Sun size={14} />
                 </motion.span>
               ) : (
-                <motion.span key="moon" initial={{ opacity:0,rotate:20,scale:0.8 }} animate={{ opacity:1,rotate:0,scale:1 }} exit={{ opacity:0,rotate:-20,scale:0.8 }} transition={{ duration:0.15 }} className="absolute">
+                <motion.span key="moon"
+                  initial={{ opacity:0,rotate:20,scale:0.8 }}
+                  animate={{ opacity:1,rotate:0,scale:1 }}
+                  exit={{ opacity:0,rotate:-20,scale:0.8 }}
+                  transition={{ duration:0.15 }} className="absolute">
                   <Moon size={14} />
                 </motion.span>
               )}
@@ -97,20 +102,22 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity:0, height:0 }}
             animate={{ opacity:1, height:"auto" }}
-            exit={{   opacity:0, height:0      }}
+            exit={{   opacity:0, height:0 }}
             className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/40"
           >
             <div className="container mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <button
                   key={link.href}
-                  onClick={() => { setMenuOpen(false); setTimeout(() => scrollToSection(link.href), 150); }}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setTimeout(() => scrollToSection(link.href), 150);
+                  }}
                   className={`text-sm transition-colors py-2.5 text-left font-mono cursor-pointer
                     ${link.label === "Why Me"
                       ? "text-primary"
