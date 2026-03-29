@@ -9,6 +9,7 @@ import ResearchInterests from "@/components/ResearchInterests";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Writing from "@/components/Writing";
 import Education from "@/components/Education";
 import FutureDirection from "@/components/FutureDirection";
 import Repositories from "@/components/Repositories";
@@ -30,6 +31,7 @@ const Index = () => {
         <Skills />
         <Experience />
         <Projects />
+        <Writing />
         <Education />
         <FutureDirection />
         <Repositories />
