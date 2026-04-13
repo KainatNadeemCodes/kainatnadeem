@@ -113,20 +113,34 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* ── Credentials summary ── */}
-        <motion.p
+        {/* ── Credentials + Research Intent ── */}
+        <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-body text-muted-foreground text-sm leading-relaxed mb-10"
+          className="mb-8 space-y-4"
         >
-          Final-year Software Engineering student (CGPA 3.93 · Top 1%) at Virtual University
-          of Pakistan. 6-year PEEF Merit Scholar. Alumna of the Aspire Institute Leadership
-          Program (Harvard Faculty). Founder of NextGenShe. Preparing to pursue an MSc in
-          Artificial Intelligence — to build the systems that make education, healthcare, and
-          safety accessible for every woman who has ever been told to choose less.
-        </motion.p>
+          <p className="font-body text-muted-foreground text-sm leading-relaxed">
+            Final-year Software Engineering student (CGPA 3.93 · Top 1%) at Virtual University
+            of Pakistan. 6-year PEEF Merit Scholar. Alumna of the Aspire Institute Leadership
+            Program (Harvard Faculty). Founder of NextGenShe.
+          </p>
+
+          {/* Research intent card — NEW */}
+          <div className="bg-primary/5 border border-primary/15 rounded-lg px-5 py-4">
+            <p className="font-mono text-primary text-[10px] tracking-[0.18em] uppercase mb-2">
+              Why an MSc in AI
+            </p>
+            <p className="font-body text-foreground text-sm leading-relaxed">
+              Building the Smart Health Assistant taught me what textbooks don't cover: that a system
+              can be technically correct and still be practically unsafe. It raised three questions
+              I cannot answer through self-directed learning alone — about accountability, about who
+              AI excludes, and about when a prototype becomes a responsibility. Those questions are
+              my research agenda. An MSc is where I pursue them with the rigour they deserve.
+            </p>
+          </div>
+        </motion.div>
 
         {/* ── Pillar grid ── */}
         <div className="grid sm:grid-cols-2 gap-3">
