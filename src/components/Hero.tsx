@@ -14,7 +14,7 @@ const stats = [
   { value: "3.93", label: "CGPA · Top 1%"  },
   { value: "6yr",  label: "PEEF Scholar"   },
   { value: "4K+",  label: "Hackathon Pool" },
-  { value: "4",    label: "Live Projects"  },
+  { value: "5",    label: "Articles Live"  },
 ];
 
 const scrollTo = (id: string) => {
@@ -59,7 +59,7 @@ const Hero = () => {
           className="w-12 h-px bg-primary/40 mx-auto mb-6"
         />
 
-        {/* Role pills — clickable, cursor-pointer */}
+        {/* Role pills */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,12 +97,12 @@ const Hero = () => {
           <span className="text-gradient">human understanding.</span>
         </motion.h2>
 
-        {/* Subheading */}
+        {/* Subheading — now includes research intent */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.44, ease: "easeOut" }}
-          className="font-body text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
+          className="font-body text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-4 leading-relaxed"
         >
           I build AI-powered systems and design interfaces for the people
           who need them most —{" "}
@@ -111,11 +111,25 @@ const Hero = () => {
           </span>
         </motion.p>
 
+        {/* Research intent line — NEW */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.52, ease: "easeOut" }}
+          className="font-mono text-xs text-muted-foreground/80 max-w-lg mx-auto mb-10 leading-relaxed border border-primary/15 rounded-lg px-4 py-2.5 bg-primary/5"
+        >
+          Building these systems raised questions I cannot yet answer —{" "}
+          <span className="text-primary">
+            about accountability, safety, and who AI leaves behind.
+          </span>{" "}
+          Pursuing an MSc in AI to research them properly.
+        </motion.p>
+
         {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.52, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.58, ease: "easeOut" }}
           className="flex flex-wrap items-center justify-center gap-3 mb-14"
         >
           <a
@@ -147,11 +161,11 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Stats strip */}
+        {/* Stats strip — updated "4 Live Projects" → "5 Articles Live" */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.62, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.68, ease: "easeOut" }}
           className="inline-flex items-center gap-0 bg-card/40 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden"
         >
           {stats.map((stat, i) => (
