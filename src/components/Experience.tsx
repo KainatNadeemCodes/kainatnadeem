@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
-import { Brain, Globe, Shield, Users, Rocket, Trophy } from "lucide-react";
+import { Brain, Globe, Shield, Users, Rocket, Trophy, Award } from "lucide-react";
 
 const experiences = [
+  {
+    period: "Apr 2026",
+    title: "National Skill Competency Test (NSCT)",
+    org: "HEC · P@SHA · NCEAC · Virtual University · Tech Nation Pakistan",
+    impact: "98.5th percentile nationally — top 1.5% across all HEC-recognised university CS final-year students in Pakistan",
+    detail: "Scored 73/100 in a standardised national assessment covering AI/ML, Data Structures, Algorithms, Problem Solving, Software Engineering, and Cybersecurity. Conducted jointly by the Higher Education Commission, P@SHA, NCEAC, and Virtual University.",
+    icon: Award,
+    color: "text-amber-400",
+    bg: "bg-amber-400/10",
+    border: "border-amber-400/30",
+    tags: ["98.5th Percentile", "National Assessment", "HEC Pakistan", "Top 1.5%"],
+    highlight: true,
+  },
   {
     period: "Jan 2026",
     title: "Team Lead · Global AI Hackathon",
@@ -13,6 +26,7 @@ const experiences = [
     bg: "bg-amber-400/8",
     border: "border-amber-400/20",
     tags: ["AI Engineering", "Cross-Border Leadership", "24-hr Sprint"],
+    highlight: false,
   },
   {
     period: "2026 – Present",
@@ -25,6 +39,7 @@ const experiences = [
     bg: "bg-emerald-400/8",
     border: "border-emerald-400/20",
     tags: ["HCD", "Accessibility", "WCAG", "Figma"],
+    highlight: false,
   },
   {
     period: "2026 – Present",
@@ -37,18 +52,20 @@ const experiences = [
     bg: "bg-pink-400/8",
     border: "border-pink-400/20",
     tags: ["React.js", "TypeScript", "Figma", "Inclusive Design"],
+    highlight: false,
   },
   {
     period: "2025 – Present",
     title: "AI Engineer · Smart Health Assistant",
     org: "Final Year Project · Virtual University",
     impact: "Built end-to-end AI triage system with FastAPI + Scikit-Learn + NLTK → healthcare accessibility in low-resource environments",
-    detail: "Integrated classification engine with natural language symptom processing. Embedded ethical AI boundaries and human oversight constraints.",
+    detail: "Achieved 84%+ classification accuracy across 5 severity levels. Embedded ethical AI boundaries and human oversight constraints.",
     icon: Brain,
     color: "text-blue-400",
     bg: "bg-blue-400/8",
     border: "border-blue-400/20",
     tags: ["Python", "FastAPI", "Scikit-Learn", "NLTK", "Ethical AI"],
+    highlight: false,
   },
   {
     period: "2024 – Present",
@@ -61,6 +78,7 @@ const experiences = [
     bg: "bg-violet-400/8",
     border: "border-violet-400/20",
     tags: ["Systems Design", "UX Research", "Platform Architecture", "Social Impact"],
+    highlight: false,
   },
   {
     period: "2024 – Present",
@@ -73,6 +91,7 @@ const experiences = [
     bg: "bg-primary/8",
     border: "border-primary/20",
     tags: ["Mentorship", "Programming", "Career Guidance"],
+    highlight: false,
   },
   {
     period: "Nov 2024",
@@ -85,6 +104,7 @@ const experiences = [
     bg: "bg-amber-400/8",
     border: "border-amber-400/20",
     tags: ["Design Thinking", "Ethical Leadership", "Global Cohort"],
+    highlight: false,
   },
   {
     period: "2024 – Present",
@@ -97,6 +117,7 @@ const experiences = [
     bg: "bg-secondary/60",
     border: "border-border/40",
     tags: ["Figma", "HTML/CSS", "Frontend", "Accessibility"],
+    highlight: false,
   },
 ];
 
@@ -142,8 +163,19 @@ const Experience = () => {
                     <Icon size={15} className={exp.color} />
                   </div>
 
-                  {/* Card */}
-                  <div className="bg-card border border-border/50 rounded-xl p-5 transition-all duration-300 group-hover:border-border/80 group-hover:shadow-md">
+                  {/* Card — highlighted variant for NSCT */}
+                  <div className={`bg-card border rounded-xl p-5 transition-all duration-300 group-hover:shadow-md ${
+                    exp.highlight
+                      ? "border-amber-400/30 bg-amber-400/5 group-hover:border-amber-400/50"
+                      : "border-border/50 group-hover:border-border/80"
+                  }`}>
+
+                    {/* NSCT badge */}
+                    {exp.highlight && (
+                      <div className="inline-flex items-center gap-1.5 font-mono text-[9px] px-2.5 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-400 tracking-widest uppercase mb-3">
+                        ★ National Award · 98.5th Percentile
+                      </div>
+                    )}
 
                     {/* Top row */}
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
@@ -154,8 +186,12 @@ const Experience = () => {
 
                     <p className="font-mono text-muted-foreground text-[10px] tracking-wide mb-3">{exp.period}</p>
 
-                    {/* Impact statement — bold single line */}
-                    <p className="text-foreground/90 text-sm font-medium leading-relaxed mb-2 border-l-2 border-primary/30 pl-3">
+                    {/* Impact statement */}
+                    <p className={`text-sm font-medium leading-relaxed mb-2 border-l-2 pl-3 ${
+                      exp.highlight
+                        ? "text-amber-400/90 border-amber-400/40"
+                        : "text-foreground/90 border-primary/30"
+                    }`}>
                       → {exp.impact}
                     </p>
 
@@ -169,7 +205,11 @@ const Experience = () => {
                       {exp.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="bg-secondary text-secondary-foreground text-[10px] px-2 py-0.5 rounded font-mono border border-border/30"
+                          className={`text-[10px] px-2 py-0.5 rounded font-mono border ${
+                            exp.highlight
+                              ? "bg-amber-400/10 text-amber-400 border-amber-400/25"
+                              : "bg-secondary text-secondary-foreground border-border/30"
+                          }`}
                         >
                           {tag}
                         </span>
