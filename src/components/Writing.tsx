@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, BookOpen, Linkedin, Clock, Tag, ExternalLink } from "lucide-react";
+import { ArrowUpRight, BookOpen, Linkedin, Clock, Tag, ExternalLink, Brain } from "lucide-react";
 
 const articles = [
   {
@@ -23,6 +23,30 @@ const articles = [
     glow: "hover:shadow-primary/10",
     via: "via-primary/50",
     cta: "Read on LinkedIn",
+    type: "single",
+  },
+  {
+    title: "Building Responsible AI for Pakistan's Health",
+    summary:
+      "A 7-part research series documenting the full journey of building the Smart Health Assistant — from first principles and ethical frameworks, through architecture decisions and real-world testing, to the questions that remain unanswered.",
+    url: "#",
+    platform: "LinkedIn · Series · 4 of 7 published",
+    platformIcon: Brain,
+    platformColor: "text-violet-400",
+    platformBg: "bg-violet-400/10",
+    platformBorder: "border-violet-400/20",
+    readTime: "~45 min total",
+    tags: ["Responsible AI", "Healthcare AI", "Pakistan", "FastAPI", "NLP", "Ethics"],
+    featured: false,
+    date: "2026",
+    accentColor: "violet",
+    highlight: "Architecture · NLP · Ethical constraints · Decision routing · Real-world testing",
+    border: "border-violet-400/20",
+    borderHover: "hover:border-violet-400/40",
+    glow: "hover:shadow-violet-400/10",
+    via: "via-violet-400/50",
+    cta: null,
+    type: "series",
   },
   {
     title: "Haven Blog — How Inclusive Design Began",
@@ -45,6 +69,59 @@ const articles = [
     glow: "hover:shadow-emerald-400/10",
     via: "via-emerald-400/50",
     cta: "Read the Blog",
+    type: "single",
+  },
+];
+
+const smartHealthParts = [
+  {
+    num: "01",
+    title: "Why I Started Building This",
+    excerpt: "The question that started everything — why build an AI health assistant for Pakistan when nothing else existed.",
+    url: "https://www.linkedin.com/pulse/im-building-ai-health-assistant-pakistan-because-waiting-nadeem--izerf",
+    published: true,
+  },
+  {
+    num: "02",
+    title: "Before I Wrote a Single Line of Code",
+    excerpt: "The ethical and research questions I had to answer before touching a keyboard — and why they shaped every decision that followed.",
+    url: "https://www.linkedin.com/pulse/before-i-wrote-single-line-code-had-answer-questions-kainat-nadeem--jxtnf",
+    published: true,
+  },
+  {
+    num: "03",
+    title: "When the System Started Becoming Real",
+    excerpt: "Where idea became architecture — the decisions that turned a concept into a working system.",
+    url: "https://www.linkedin.com/pulse/where-system-stopped-being-idea-started-becoming-real-kainat-nadeem--a5rpf",
+    published: true,
+  },
+  {
+    num: "04",
+    title: "Where the System Met Reality",
+    excerpt: "When the prototype was tested and reality pushed back — the failures, the fixes, and what they revealed.",
+    url: "https://www.linkedin.com/pulse/where-system-met-reality-pushed-back-series-building-ai-nadeem--i6s7f",
+    published: true,
+  },
+  {
+    num: "05",
+    title: "Final Deliverables",
+    excerpt: "Coming soon",
+    url: null,
+    published: false,
+  },
+  {
+    num: "06",
+    title: "Ethical Constraints in Practice",
+    excerpt: "Coming soon",
+    url: null,
+    published: false,
+  },
+  {
+    num: "07",
+    title: "What I Learned — and Where It Goes Next",
+    excerpt: "Coming soon",
+    url: null,
+    published: false,
   },
 ];
 
@@ -137,6 +214,17 @@ const Writing = () => {
                         {article.readTime}
                       </span>
                       <span className="text-muted-foreground text-[11px] font-mono">· {article.date}</span>
+
+                      {/* Series in progress badge */}
+                      {article.type === "series" && (
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-mono px-3 py-1.5 rounded-full bg-violet-400/10 border border-violet-400/20 text-violet-400">
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-60"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-violet-400"></span>
+                          </span>
+                          Series in progress
+                        </span>
+                      )}
                     </div>
 
                     {/* Title */}
@@ -146,12 +234,50 @@ const Writing = () => {
 
                     {/* Summary as pull quote */}
                     <p className="font-body text-secondary-foreground text-sm leading-relaxed mb-5 border-l-2 border-current pl-4 italic"
-                       style={{ borderColor: article.platformColor.replace('text-', '').includes('emerald') ? '#34d399' : '#3b82f6' }}>
+                       style={{ borderColor: article.type === "series" ? '#a78bfa' : article.platformColor.replace('text-', '').includes('emerald') ? '#34d399' : '#3b82f6' }}>
                       "{article.summary}"
                     </p>
 
+                    {/* Smart Health series parts */}
+                    {article.type === "series" && (
+                      <div className="grid sm:grid-cols-2 gap-2 mb-5">
+                        {smartHealthParts.map((part) => (
+                          <div
+                            key={part.num}
+                            className={`border rounded-lg p-3 transition-colors duration-200 ${
+                              part.published
+                                ? "bg-violet-400/5 border-violet-400/20 hover:bg-violet-400/10"
+                                : "bg-secondary/20 border-border/20 opacity-50"
+                            }`}
+                          >
+                            <div className="flex items-baseline gap-2 mb-1">
+                              <span className={`font-mono text-[10px] ${part.published ? "text-violet-400" : "text-muted-foreground"}`}>
+                                {part.num}
+                              </span>
+                              {part.published && part.url ? (
+                                <a
+                                  href={part.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-foreground font-medium text-xs hover:text-violet-400 transition-colors duration-150 inline-flex items-center gap-1 group/link"
+                                >
+                                  {part.title}
+                                  <ArrowUpRight size={10} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                                </a>
+                              ) : (
+                                <p className="text-muted-foreground font-medium text-xs">{part.title}</p>
+                              )}
+                            </div>
+                            <p className="text-muted-foreground text-[11px] leading-relaxed font-body">
+                              {part.excerpt}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
                     {/* Haven posts preview */}
-                    {!article.featured && (
+                    {article.type === "single" && !article.featured && (
                       <div className="grid sm:grid-cols-2 gap-2 mb-5">
                         {havenPosts.map((post) => (
                           <div
@@ -192,21 +318,41 @@ const Writing = () => {
                     </div>
 
                     {/* CTA */}
-                    <a
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 text-sm font-semibold ${article.platformColor} hover:opacity-80 transition-opacity duration-200 cursor-pointer`}
-                    >
-                      {article.cta}
-                      <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                    </a>
+                    {article.cta && (
+                      <a
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 text-sm font-semibold ${article.platformColor} hover:opacity-80 transition-opacity duration-200 cursor-pointer`}
+                      >
+                        {article.cta}
+                        <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                      </a>
+                    )}
+
+                    {/* Series read links row */}
+                    {article.type === "series" && (
+                      <div className="flex flex-wrap gap-3">
+                        {smartHealthParts.filter(p => p.published && p.url).map((part) => (
+                          <a
+                            key={part.num}
+                            href={part.url!}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-[11px] font-mono text-violet-400 hover:opacity-70 transition-opacity duration-150"
+                          >
+                            Part {part.num}
+                            <ArrowUpRight size={10} />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Bottom bar */}
                   <div className="border-t border-border/30 bg-card/50 px-7 md:px-9 py-3 flex items-center justify-between">
                     <p className="text-muted-foreground text-[11px] font-mono truncate">
-                      {article.url}
+                      {article.type === "series" ? "linkedin.com/in/kainat-nadeem · 4 articles published" : article.url}
                     </p>
                     <ExternalLink size={12} className="text-muted-foreground shrink-0 ml-2" />
                   </div>
@@ -237,11 +383,9 @@ const Writing = () => {
                 Research in Progress
               </p>
               <p className="text-muted-foreground text-xs leading-relaxed font-body">
-                This is ongoing work. The Haven blog is actively growing — new posts covering
-                WCAG principles, sensory-friendly colour systems, and user testing insights
-                are being added gradually. The Haven platform itself continues to evolve with
-                new accessibility features informed by research. A dedicated blog for the
-                Smart Health Assistant is also in development.
+                Two active writing threads: the Smart Health Assistant series (4 of 7 published, continuing as the project progresses)
+                and the Haven blog (growing with new posts on WCAG principles, sensory-friendly colour systems, and user testing insights).
+                Both platforms continue to evolve alongside the research.
               </p>
               <p className="font-mono text-[10px] text-muted-foreground/60 mt-2">
                 All writing is original · Not AI-generated · Updated regularly
