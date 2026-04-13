@@ -11,10 +11,11 @@ const roles = [
 ];
 
 const stats = [
-  { value: "3.93", label: "CGPA · Top 1%"  },
-  { value: "6yr",  label: "PEEF Scholar"   },
-  { value: "4K+",  label: "Hackathon Pool" },
-  { value: "5",    label: "Articles Live"  },
+  { value: "3.93",  label: "CGPA · Top 1%"    },
+  { value: "98.5",  label: "NSCT Percentile"   },
+  { value: "6yr",   label: "PEEF Scholar"      },
+  { value: "4K+",   label: "Hackathon Pool"    },
+  { value: "5",     label: "Articles Live"     },
 ];
 
 const scrollTo = (id: string) => {
