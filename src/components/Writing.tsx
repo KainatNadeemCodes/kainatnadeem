@@ -30,12 +30,12 @@ const articles = [
     summary:
       "A 7-part research series documenting the full journey of building the Smart Health Assistant — from first principles and ethical frameworks, through architecture decisions and real-world testing, to the questions that remain unanswered.",
     url: "#",
-    platform: "LinkedIn · Series · 4 of 7 published",
+    platform: "LinkedIn · Series · 5 of 7 published",
     platformIcon: Brain,
     platformColor: "text-violet-400",
     platformBg: "bg-violet-400/10",
     platformBorder: "border-violet-400/20",
-    readTime: "~45 min total",
+    readTime: "~55 min total",
     tags: ["Responsible AI", "Healthcare AI", "Pakistan", "FastAPI", "NLP", "Ethics"],
     featured: false,
     date: "2026",
@@ -119,9 +119,9 @@ const smartHealthParts = [
   {
     num: "07",
     title: "What I Learned — and Where It Goes Next",
-    excerpt: "Coming soon",
-    url: null,
-    published: false,
+    excerpt: "The three questions I cannot answer — and why they matter more than the ones I answered.",
+    url: "https://www.linkedin.com/pulse/what-i-learned-why-questions-remain-matter-more-than-ones-nadeem--tq8wf",
+    published: true,
   },
 ];
 
@@ -383,7 +383,7 @@ const Writing = () => {
                 Research in Progress
               </p>
               <p className="text-muted-foreground text-xs leading-relaxed font-body">
-                Two active writing threads: the Smart Health Assistant series (4 of 7 published, continuing as the project progresses)
+                Two active writing threads: the Smart Health Assistant series (5 of 7 published — Parts 1–4 cover the build journey, Part 7 covers what it opened; Parts 5 and 6 forthcoming)
                 and the Haven blog (growing with new posts on WCAG principles, sensory-friendly colour systems, and user testing insights).
                 Both platforms continue to evolve alongside the research.
               </p>
