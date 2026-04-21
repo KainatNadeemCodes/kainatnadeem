@@ -153,7 +153,7 @@ const projects = [
     tech: ["Figma", "HCD", "Accessibility", "WCAG", "UX Research"],
     image: projectHaven,
     slug: "/case-study/haven",
-    liveUrl: "https://safespacehaven.lovable.app",
+    liveUrl: "https://safespacehaven.vercel.app",
     repoUrl: null,
     accentColor: "emerald",
     archLabel: "UI Structure",
