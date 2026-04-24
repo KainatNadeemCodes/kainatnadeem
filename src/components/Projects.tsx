@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Github, Clock, Brain, Shield, Zap, Globe, Eye, GitBranch } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Clock, Brain, Shield, Zap, Globe, Eye, GitBranch, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
@@ -118,16 +118,15 @@ const SheSphereArchSVG = () => (
 );
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Projects data — rewritten descriptions + identity tags + new CTAs
+// Projects data
 // ─────────────────────────────────────────────────────────────────────────────
 const projects = [
   {
     title: "NextGenShe",
     category: "Female Education Platform",
     categoryIcon: Globe,
-    // ── UX rewrite ──
     hook: "Millions of women want to learn — but barriers like privacy concerns, cultural stigma, and poor connectivity stop them before they start.",
-    summary: "Designing a safe, accessible way for women to learn without barriers — a platform built on privacy, simplicity, and inclusivity so education reaches home.",
+    summary: "Designing a safe, accessible way for women to learn without barriers — a platform built on privacy, simplicity, and inclusivity so education reaches home. Selected from 4,000+ Aspire applicants; active pilot with 20+ women mentored.",
     tags: ["🌍 Social Impact", "🧠 UX Case Study"],
     cta: "Explore the Impact",
     ctaSecondary: "View UX Case Study",
@@ -135,7 +134,9 @@ const projects = [
     image: projectNextGenShe,
     slug: "/case-study/nextgenshe",
     liveUrl: "https://women-edu-first.vercel.app",
-    repoUrl: null,
+    repoUrl: "https://github.com/KainatNadeemCodes/Women-Edu-First-frontend",
+    repoUrlBackend: "https://github.com/KainatNadeemCodes/Women-Edu-First-backend",
+    researchUrl: null,
     accentColor: "violet",
     archLabel: "Platform Architecture",
     ArchDiagram: NextGenSheArchSVG,
@@ -146,7 +147,7 @@ const projects = [
     category: "Accessibility · Inclusive Design",
     categoryIcon: Shield,
     hook: "Most apps are designed for neurotypical users — Haven asks: what if the interface itself understood how your brain works?",
-    summary: "Making digital spaces feel safe and predictable for neurodivergent users — every design decision mapped to real cognitive research, not assumption.",
+    summary: "Making digital spaces feel safe and predictable for neurodivergent users — every design decision mapped to real cognitive research, not assumption. Documented across 8 research posts; WCAG 2.1 AA compliant.",
     tags: ["🧠 UX Case Study", "♿ Accessibility"],
     cta: "See UX Decisions",
     ctaSecondary: "View Design Process",
@@ -154,7 +155,9 @@ const projects = [
     image: projectHaven,
     slug: "/case-study/haven",
     liveUrl: "https://safespacehaven.vercel.app",
-    repoUrl: null,
+    repoUrl: "https://github.com/KainatNadeemCodes/Haven_Frontend",
+    repoUrlBackend: "https://github.com/KainatNadeemCodes/Haven_Backend",
+    researchUrl: null,
     accentColor: "emerald",
     archLabel: "UI Structure",
     ArchDiagram: HavenArchSVG,
@@ -165,15 +168,17 @@ const projects = [
     category: "AI Engineering",
     categoryIcon: Brain,
     hook: "In low-resource environments, people make health decisions without guidance — this system changes that, without replacing the doctor.",
-    summary: "Making user experiences smarter with intelligent assistance — AI that guides users, reduces effort, and improves decisions in real time, ethically.",
+    summary: "AI triage system achieving 84%+ classification accuracy across 5 severity levels — handles real-world Urdu-English inputs, routes to appropriate care, and enforces an ethical constraint layer that prevents diagnosis and mandates human oversight.",
     tags: ["🤖 AI", "💻 Frontend"],
     cta: "See AI in Action",
-    ctaSecondary: "Explore Smart Features",
+    ctaSecondary: "Read Research Series",
     tech: ["Python", "FastAPI", "Scikit-Learn", "NLTK", "Decision Logic"],
     image: projectHealth,
     slug: "/case-study/smart-health-assistant",
     liveUrl: null,
-    repoUrl: "https://github.com/KainatNadeemCodes",
+    repoUrl: "https://github.com/KainatNadeemCodes/health-assistant-FYP",
+    repoUrlBackend: null,
+    researchUrl: "https://www.linkedin.com/pulse/im-building-ai-health-assistant-pakistan-because-waiting-nadeem--izerf",
     accentColor: "blue",
     archLabel: "Decision Flow",
     ArchDiagram: HealthArchSVG,
@@ -193,6 +198,8 @@ const projects = [
     slug: null,
     liveUrl: null,
     repoUrl: "https://github.com/KainatNadeemCodes",
+    repoUrlBackend: null,
+    researchUrl: null,
     accentColor: "pink",
     archLabel: "Event-Driven Flow",
     ArchDiagram: SheSphereArchSVG,
@@ -402,7 +409,7 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Hook — curiosity line */}
+                    {/* Hook */}
                     <p className={`font-mono text-[10px] tracking-wide uppercase mb-2 leading-relaxed ${accent.text}`}>
                       {project.hook}
                     </p>
@@ -432,17 +439,35 @@ const Projects = () => {
                         </span>
                       )}
                       {project.liveUrl && (
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <ExternalLink size={12} />
-                          {project.ctaSecondary}
+                          Live Site
                         </a>
                       )}
                       {project.repoUrl && (
-                        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
+                        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <Github size={12} />
-                          GitHub
+                          {project.repoUrlBackend ? "Frontend" : "GitHub"}
+                        </a>
+                      )}
+                      {project.repoUrlBackend && (
+                        <a href={project.repoUrlBackend} target="_blank" rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
+                          <Github size={12} />
+                          Backend
+                        </a>
+                      )}
+                      {project.researchUrl && (
+                        <a href={project.researchUrl} target="_blank" rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
+                          <BookOpen size={12} />
+                          Research Series
                         </a>
                       )}
                     </div>
@@ -496,7 +521,6 @@ const Projects = () => {
                   </span>
                 </div>
 
-                {/* Identity tags */}
                 <div className="flex flex-wrap gap-1.5 mb-3 relative z-10">
                   {project.tags.map((tag) => (
                     <span key={tag} className={`text-[10px] font-mono px-2 py-0.5 rounded-md border ${TAG_STYLES[tag] ?? "bg-secondary text-secondary-foreground border-border/30"}`}>
