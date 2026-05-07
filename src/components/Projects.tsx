@@ -7,6 +7,7 @@ import projectHaven from "@/assets/project-haven.jpg";
 import projectSheSphere    from "@/assets/project-shesphere.svg";
 import projectFlowMind     from "@/assets/project-flowmind.svg";
 import projectDisasterWatch from "@/assets/project-disaster-watcher.svg";
+import projectTahqiq from "@/assets/project-tahqiq.jpg";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Identity tag config
@@ -174,13 +175,13 @@ const projects = [
     category: "HEC Gen AI Hackathon 2026",
     categoryIcon: Cpu,
     hook: "500,000 Pakistani students choose a university every year — 78% rely on word-of-mouth, 40% drop out from wrong-fit choices. Zero free Urdu advisors exist.",
-    summary: "Pakistan's first Explainable AI university counselor — a 5-agent pipeline that takes a Roman Urdu query like 'Mere 78% hain, CS mein scholarship chahiye' and returns ranked university matches with XAI confidence scores, Urdu explanations, and a branded PDF — in under 30 seconds. Built across 253 HEC-verified universities with anti-hallucination contracts.",
+    summary: "Pakistan's first Explainable AI university counselor — a 5-agent pipeline that takes a Roman Urdu query and returns ranked university matches with XAI confidence scores, Urdu explanations, and a branded PDF in under 30 seconds. Built across 253 HEC-verified universities with anti-hallucination contracts.",
     tags: ["🤖 AI", "🌍 Social Impact", "💻 Frontend"],
     cta: "View Case Study",
     ctaSecondary: "Live App",
     tech: ["FastAPI", "LangChain", "ChromaDB", "Streamlit", "HuggingFace", "Urdish NLP", "XAI", "Multi-agent"],
-    image: null,
-    slug: null,
+    image: projectTahqiq,                          // ← changed from null
+    slug: "/case-study/tahqiq-ai",                 // ← changed from null
     liveUrl: "https://tahqiq-ai-hec.streamlit.app",
     repoUrl: "https://github.com/KainatNadeemCodes/Tahqiq-AI-HEC-Frontend",
     repoUrlBackend: "https://huggingface.co/spaces/Universex01/Tahqiq-AI-HEC-Backend",
