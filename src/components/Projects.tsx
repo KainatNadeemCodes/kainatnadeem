@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Github, Clock, Brain, Shield, Zap, Globe, Eye, GitBranch, BookOpen } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Clock, Brain, Shield, Zap, Globe, Eye, GitBranch, BookOpen, Cpu, Users, Play, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
@@ -117,12 +117,74 @@ const SheSphereArchSVG = () => (
   </svg>
 );
 
+const TahqiqArchSVG = () => (
+  <svg viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <rect x="75" y="4" width="70" height="18" rx="3" fill="rgba(99,102,241,0.18)" stroke="rgba(129,140,248,0.5)" strokeWidth="0.8"/>
+    <text x="110" y="16" textAnchor="middle" fill="rgba(199,210,254,0.9)" fontSize="6.5" fontFamily="monospace">Urdish Query Input</text>
+    <line x1="110" y1="22" x2="110" y2="30" stroke="rgba(129,140,248,0.4)" strokeWidth="0.8"/>
+    <line x1="110" y1="30" x2="30" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
+    <line x1="110" y1="30" x2="75" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
+    <line x1="110" y1="30" x2="120" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
+    <line x1="110" y1="30" x2="165" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
+    <line x1="110" y1="30" x2="200" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
+    {[
+      [4, "Query", "Intent Parser"],
+      [50, "Data", "ChromaDB"],
+      [95, "XAI", "Why-Engine"],
+      [140, "Insight", "Next Steps"],
+      [185, "Contract", "PDF Export"],
+    ].map(([x, label, sub], i) => (
+      <g key={i}>
+        <rect x={Number(x)} y="38" width="32" height="28" rx="3"
+          fill={i === 2 ? "rgba(99,102,241,0.2)" : "rgba(99,102,241,0.1)"}
+          stroke={i === 2 ? "rgba(129,140,248,0.6)" : "rgba(129,140,248,0.3)"} strokeWidth="0.7"/>
+        <text x={Number(x)+16} y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">{String(label)}</text>
+        <text x={Number(x)+16} y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">{String(sub)}</text>
+      </g>
+    ))}
+    <line x1="110" y1="66" x2="110" y2="76" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
+    <rect x="30" y="76" width="160" height="18" rx="3" fill="rgba(99,102,241,0.12)" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
+    <text x="110" y="88" textAnchor="middle" fill="rgba(199,210,254,0.85)" fontSize="6.5" fontFamily="monospace">253 HEC Universities · ChromaDB + TF-IDF</text>
+    <line x1="110" y1="94" x2="110" y2="104" stroke="rgba(129,140,248,0.25)" strokeWidth="0.7"/>
+    <rect x="15" y="104" width="88" height="16" rx="3" fill="rgba(16,185,129,0.1)" stroke="rgba(52,211,153,0.3)" strokeWidth="0.7"/>
+    <text x="59" y="115" textAnchor="middle" fill="rgba(110,231,183,0.8)" fontSize="6" fontFamily="monospace">XAI Urdu Explanation</text>
+    <rect x="117" y="104" width="88" height="16" rx="3" fill="rgba(245,158,11,0.1)" stroke="rgba(251,191,36,0.3)" strokeWidth="0.7"/>
+    <text x="161" y="115" textAnchor="middle" fill="rgba(253,230,138,0.8)" fontSize="6" fontFamily="monospace">PDF "Show Baba" Export</text>
+    <text x="110" y="133" textAnchor="middle" fill="rgba(129,140,248,0.5)" fontSize="5.5" fontFamily="monospace">LLM Router: HuggingFace → Grok → GPT-4o → Claude → Offline</text>
+  </svg>
+);
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Projects data
 // ─────────────────────────────────────────────────────────────────────────────
 const projects = [
   {
-    title: "NextGenShe",
+    title: "Tahqiq AI",
+    category: "HEC Gen AI Hackathon 2026",
+    categoryIcon: Cpu,
+    hook: "500,000 Pakistani students choose a university every year — 78% rely on word-of-mouth, 40% drop out from wrong-fit choices. Zero free Urdu advisors exist.",
+    summary: "Pakistan's first Explainable AI university counselor — a 5-agent pipeline that takes a Roman Urdu query like 'Mere 78% hain, CS mein scholarship chahiye' and returns ranked university matches with XAI confidence scores, Urdu explanations, and a branded PDF — in under 30 seconds. Built across 253 HEC-verified universities with anti-hallucination contracts.",
+    tags: ["🤖 AI", "🌍 Social Impact", "💻 Frontend"],
+    cta: "View Case Study",
+    ctaSecondary: "Live App",
+    tech: ["FastAPI", "LangChain", "ChromaDB", "Streamlit", "HuggingFace", "Urdish NLP", "XAI", "Multi-agent"],
+    image: null,
+    slug: null,
+    liveUrl: "https://tahqiq-ai-hec.streamlit.app",
+    repoUrl: "https://github.com/KainatNadeemCodes/Tahqiq-AI-HEC-Frontend",
+    repoUrlBackend: "https://huggingface.co/spaces/Universex01/Tahqiq-AI-HEC-Backend",
+    researchUrl: "https://tahqiq-ai-hec-blog.lovable.app",
+    slidesUrl: "https://docs.google.com/presentation/d/1alsrMvIKIJtl9vW9ZeZtHJ5DIARL7y_9/edit",
+    videoUrl: "https://drive.google.com/file/d/1Zs0TxNcFCW1G4Rhb9p73LZ_shLzsUoD2/view",
+    accentColor: "indigo",
+    archLabel: "5-Agent Pipeline",
+    ArchDiagram: TahqiqArchSVG,
+    featured: true,
+    hackathon: true,
+    teamRole: "Backend Developer · Multi-agent pipeline · LLM Router · Deployment",
+    teamSize: "5-member team",
+    keyNumbers: ["253 unis", "5 agents", "<30s", "4+ LLMs"],
+  },
     category: "Female Education Platform",
     categoryIcon: Globe,
     hook: "Millions of women want to learn — but barriers like privacy concerns, cultural stigma, and poor connectivity stop them before they start.",
@@ -276,6 +338,7 @@ const comingSoon = [
 ];
 
 const accentMap: Record<string, { border: string; text: string; bg: string; badge: string; glow: string }> = {
+  indigo: { border: "group-hover:border-indigo-500/40", text: "text-indigo-400", bg: "bg-indigo-400/8", badge: "bg-indigo-400/10 text-indigo-300 border-indigo-400/20", glow: "group-hover:shadow-indigo-500/10" },
   blue:   { border: "group-hover:border-blue-500/40",   text: "text-blue-400",   bg: "bg-blue-400/8",   badge: "bg-blue-400/10 text-blue-300 border-blue-400/20",     glow: "group-hover:shadow-blue-500/10"   },
   violet: { border: "group-hover:border-violet-500/40", text: "text-violet-400", bg: "bg-violet-400/8", badge: "bg-violet-400/10 text-violet-300 border-violet-400/20", glow: "group-hover:shadow-violet-500/10" },
   emerald:{ border: "group-hover:border-emerald-500/40",text: "text-emerald-400",bg: "bg-emerald-400/8",badge: "bg-emerald-400/10 text-emerald-300 border-emerald-400/20",glow:"group-hover:shadow-emerald-500/10"},
@@ -400,6 +463,19 @@ const Projects = () => {
                   {/* Content */}
                   <div className="md:col-span-3 p-6 md:p-7 flex flex-col justify-center">
 
+                    {/* Hackathon badge + team strip */}
+                    {project.hackathon && (
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <span className="inline-flex items-center gap-1.5 font-mono text-[9px] px-2.5 py-1 rounded-full bg-indigo-400/15 border border-indigo-400/30 text-indigo-300 tracking-widest uppercase">
+                          ★ HEC Gen AI Hackathon 2026
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 font-mono text-[9px] px-2.5 py-1 rounded-full bg-secondary border border-border/40 text-muted-foreground">
+                          <Users size={9} />
+                          {project.teamSize}
+                        </span>
+                      </div>
+                    )}
+
                     {/* Identity tags */}
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {project.tags.map((tag) => (
@@ -418,9 +494,30 @@ const Projects = () => {
                       {project.title}
                     </h3>
 
-                    <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
+                    <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
                       {project.summary}
                     </p>
+
+                    {/* Key numbers strip for Tahqiq */}
+                    {project.keyNumbers && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.keyNumbers.map((n) => (
+                          <span key={n} className="font-mono text-[10px] px-2.5 py-1 rounded-md bg-indigo-400/8 border border-indigo-400/20 text-indigo-300">
+                            {n}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Team role strip */}
+                    {project.teamRole && (
+                      <div className="flex items-start gap-2 mb-4 bg-secondary/40 border border-border/30 rounded-lg px-3 py-2">
+                        <Users size={11} className="text-muted-foreground shrink-0 mt-0.5" />
+                        <p className="font-mono text-[10px] text-muted-foreground leading-relaxed">
+                          <span className="text-foreground font-medium">My role: </span>{project.teamRole}
+                        </p>
+                      </div>
+                    )}
 
                     {/* Tech tags */}
                     <div className="flex flex-wrap gap-1.5 mb-5">
@@ -443,7 +540,7 @@ const Projects = () => {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <ExternalLink size={12} />
-                          Live Site
+                          Live App
                         </a>
                       )}
                       {project.repoUrl && (
@@ -459,7 +556,7 @@ const Projects = () => {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <Github size={12} />
-                          Backend
+                          {project.title === "Tahqiq AI" ? "HF Backend" : "Backend"}
                         </a>
                       )}
                       {project.researchUrl && (
@@ -467,7 +564,23 @@ const Projects = () => {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <BookOpen size={12} />
-                          Research Series
+                          {project.title === "Tahqiq AI" ? "Blog" : "Research Series"}
+                        </a>
+                      )}
+                      {project.slidesUrl && (
+                        <a href={project.slidesUrl} target="_blank" rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
+                          <FileText size={12} />
+                          Slides
+                        </a>
+                      )}
+                      {project.videoUrl && (
+                        <a href={project.videoUrl} target="_blank" rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
+                          <Play size={12} />
+                          Video
                         </a>
                       )}
                     </div>
