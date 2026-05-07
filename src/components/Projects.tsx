@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Github, Clock, Brain, Shield, Zap, Globe, Eye, GitBranch, BookOpen, Trophy } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Clock, Brain, Shield, Zap, Globe, Eye, GitBranch, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import projectHealth from "@/assets/project-health.jpg";
 import projectNextGenShe from "@/assets/project-nextgenshe.jpg";
@@ -18,42 +18,11 @@ const TAG_STYLES: Record<string, string> = {
   "🤖 AI":            "bg-amber-400/10  text-amber-300  border-amber-400/25",
   "♿ Accessibility":  "bg-pink-400/10   text-pink-300   border-pink-400/25",
   "🔒 Safety Tech":   "bg-rose-400/10   text-rose-300   border-rose-400/25",
-  "🏆 Hackathon":     "bg-yellow-400/10 text-yellow-300 border-yellow-400/25",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Architecture overlay SVGs
 // ─────────────────────────────────────────────────────────────────────────────
-const TahqiqArchSVG = () => (
-  <svg viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-    <rect x="65" y="6" width="90" height="18" rx="4" fill="rgba(234,179,8,0.16)" stroke="rgba(250,204,21,0.45)" strokeWidth="0.8"/>
-    <text x="110" y="18" textAnchor="middle" fill="rgba(253,224,71,0.9)" fontSize="6.5" fontFamily="monospace">Urdish / Urdu / English Query</text>
-    <line x1="110" y1="24" x2="110" y2="34" stroke="rgba(250,204,21,0.35)" strokeWidth="0.8"/>
-    {[
-      { x: 8,   label1: "1 Query",    label2: "Agent"      },
-      { x: 52,  label1: "2 Data",     label2: "Agent"      },
-      { x: 96,  label1: "3 XAI",      label2: "Agent"      },
-      { x: 140, label1: "4 Insight",  label2: "Agent"      },
-      { x: 184, label1: "5 PDF",      label2: "Serializer" },
-    ].map((a, i) => (
-      <g key={i}>
-        <line x1="110" y1="34" x2={a.x + 18} y2="44" stroke="rgba(250,204,21,0.28)" strokeWidth="0.7"/>
-        <rect x={a.x} y="44" width="36" height="30" rx="3" fill="rgba(234,179,8,0.13)" stroke="rgba(250,204,21,0.38)" strokeWidth="0.7"/>
-        <text x={a.x + 18} y="57" textAnchor="middle" fill="rgba(253,224,71,0.85)" fontSize="5.5" fontFamily="monospace">{a.label1}</text>
-        <text x={a.x + 18} y="67" textAnchor="middle" fill="rgba(253,224,71,0.7)"  fontSize="5"   fontFamily="monospace">{a.label2}</text>
-      </g>
-    ))}
-    <line x1="110" y1="74" x2="110" y2="84" stroke="rgba(250,204,21,0.3)" strokeWidth="0.8"/>
-    <rect x="40" y="84" width="140" height="16" rx="3" fill="rgba(234,179,8,0.1)" stroke="rgba(250,204,21,0.3)" strokeWidth="0.7"/>
-    <text x="110" y="95" textAnchor="middle" fill="rgba(253,224,71,0.8)" fontSize="5.8" fontFamily="monospace">LLM Router · Llama → Grok → GPT-4o → Claude → Offline</text>
-    <line x1="110" y1="100" x2="110" y2="110" stroke="rgba(250,204,21,0.25)" strokeWidth="0.7"/>
-    <rect x="55" y="110" width="110" height="16" rx="3" fill="rgba(234,179,8,0.08)" stroke="rgba(250,204,21,0.22)" strokeWidth="0.7"/>
-    <text x="110" y="121" textAnchor="middle" fill="rgba(253,224,71,0.7)" fontSize="5.8" fontFamily="monospace">ChromaDB · 253 HEC Unis · TF-IDF fallback</text>
-    <line x1="110" y1="126" x2="110" y2="133" stroke="rgba(250,204,21,0.2)" strokeWidth="0.7"/>
-    <text x="110" y="139" textAnchor="middle" fill="rgba(253,224,71,0.5)" fontSize="5.5" fontFamily="monospace">Ranked Recs + Urdu XAI + PDF Report · 30s</text>
-  </svg>
-);
-
 const HealthArchSVG = () => (
   <svg viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <rect x="78" y="8" width="64" height="22" rx="4" fill="rgba(59,130,246,0.18)" stroke="rgba(96,165,250,0.5)" strokeWidth="0.8"/>
@@ -153,27 +122,6 @@ const SheSphereArchSVG = () => (
 // ─────────────────────────────────────────────────────────────────────────────
 const projects = [
   {
-    title: "Tahqiq.ai",
-    category: "HEC Gen AI Hackathon 2026",
-    categoryIcon: Trophy,
-    hook: "500,000 Pakistani students select a university every year — with no free advisor, no Urdu guidance, and no way to verify if an institution is even real.",
-    summary: "Pakistan's first Explainable AI university advisor — built in 24 hours at the HEC Gen AI Hackathon with a cross-functional team of 5. I led the backend: a 5-agent LLM pipeline (Query → Data → XAI → Insight → PDF) with auto-failover across Llama-3.3-70B, Grok, GPT-4o, and Claude, grounded in a custom-scraped HEC CSV of 253 universities. Every recommendation cites exact HEC data with an Urdu confidence score — zero hallucinations, ever.",
-    tags: ["🏆 Hackathon", "🤖 AI", "🌍 Social Impact"],
-    cta: "Try the App",
-    ctaSecondary: "View on Hugging Face",
-    tech: ["FastAPI", "LangChain", "ChromaDB", "Streamlit", "Llama-3.3-70B", "Hugging Face", "Pydantic", "Docker"],
-    image: null,
-    slug: null,
-    liveUrl: "https://tahqiq-ai-hec.streamlit.app",
-    repoUrl: "https://github.com/KainatNadeemCodes/Tahqiq-AI-HEC-Frontend",
-    repoUrlBackend: "https://huggingface.co/spaces/Universex01/Tahqiq-AI-HEC-Backend",
-    researchUrl: "https://tahqiq-ai-hec-blog.lovable.app",
-    accentColor: "yellow",
-    archLabel: "5-Agent Pipeline",
-    ArchDiagram: TahqiqArchSVG,
-    featured: true,
-  },
-  {
     title: "NextGenShe",
     category: "Female Education Platform",
     categoryIcon: Globe,
@@ -192,7 +140,7 @@ const projects = [
     accentColor: "violet",
     archLabel: "Platform Architecture",
     ArchDiagram: NextGenSheArchSVG,
-    featured: false,
+    featured: true,
   },
   {
     title: "Haven",
@@ -328,7 +276,6 @@ const comingSoon = [
 ];
 
 const accentMap: Record<string, { border: string; text: string; bg: string; badge: string; glow: string }> = {
-  yellow: { border: "group-hover:border-yellow-500/40", text: "text-yellow-400", bg: "bg-yellow-400/8", badge: "bg-yellow-400/10 text-yellow-300 border-yellow-400/20", glow: "group-hover:shadow-yellow-500/10" },
   blue:   { border: "group-hover:border-blue-500/40",   text: "text-blue-400",   bg: "bg-blue-400/8",   badge: "bg-blue-400/10 text-blue-300 border-blue-400/20",     glow: "group-hover:shadow-blue-500/10"   },
   violet: { border: "group-hover:border-violet-500/40", text: "text-violet-400", bg: "bg-violet-400/8", badge: "bg-violet-400/10 text-violet-300 border-violet-400/20", glow: "group-hover:shadow-violet-500/10" },
   emerald:{ border: "group-hover:border-emerald-500/40",text: "text-emerald-400",bg: "bg-emerald-400/8",badge: "bg-emerald-400/10 text-emerald-300 border-emerald-400/20",glow:"group-hover:shadow-emerald-500/10"},
@@ -338,7 +285,7 @@ const accentMap: Record<string, { border: string; text: string; bg: string; badg
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Arch overlay — identical to your original
+// Arch overlay
 // ─────────────────────────────────────────────────────────────────────────────
 const ArchOverlay = ({ label, accentText, Diagram }: { label: string; accentText: string; Diagram: () => JSX.Element }) => (
   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out">
@@ -426,7 +373,7 @@ const Projects = () => {
 
                 <div className="grid md:grid-cols-5">
 
-                  {/* Left panel: image or icon placeholder + arch overlay */}
+                  {/* Image + arch overlay */}
                   <div className="md:col-span-2 relative h-48 md:h-full overflow-hidden">
                     {project.image ? (
                       <>
@@ -496,7 +443,7 @@ const Projects = () => {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <ExternalLink size={12} />
-                          Live App
+                          Live Site
                         </a>
                       )}
                       {project.repoUrl && (
@@ -520,7 +467,7 @@ const Projects = () => {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 border border-border/50 rounded-md px-3 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors duration-200 cursor-pointer">
                           <BookOpen size={12} />
-                          Blog
+                          Research Series
                         </a>
                       )}
                     </div>
