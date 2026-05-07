@@ -127,21 +127,32 @@ const TahqiqArchSVG = () => (
     <line x1="110" y1="30" x2="120" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
     <line x1="110" y1="30" x2="165" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
     <line x1="110" y1="30" x2="200" y2="38" stroke="rgba(129,140,248,0.35)" strokeWidth="0.7"/>
-    {[
-      [4, "Query", "Intent Parser"],
-      [50, "Data", "ChromaDB"],
-      [95, "XAI", "Why-Engine"],
-      [140, "Insight", "Next Steps"],
-      [185, "Contract", "PDF Export"],
-    ].map(([x, label, sub], i) => (
-      <g key={i}>
-        <rect x={Number(x)} y="38" width="32" height="28" rx="3"
-          fill={i === 2 ? "rgba(99,102,241,0.2)" : "rgba(99,102,241,0.1)"}
-          stroke={i === 2 ? "rgba(129,140,248,0.6)" : "rgba(129,140,248,0.3)"} strokeWidth="0.7"/>
-        <text x={Number(x)+16} y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">{String(label)}</text>
-        <text x={Number(x)+16} y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">{String(sub)}</text>
-      </g>
-    ))}
+    {/* Agent boxes — static to avoid esbuild JSX destructuring issue */}
+    <g>
+      <rect x="4" y="38" width="32" height="28" rx="3" fill="rgba(99,102,241,0.1)" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
+      <text x="20" y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">Query</text>
+      <text x="20" y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">Intent Parser</text>
+    </g>
+    <g>
+      <rect x="50" y="38" width="32" height="28" rx="3" fill="rgba(99,102,241,0.1)" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
+      <text x="66" y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">Data</text>
+      <text x="66" y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">ChromaDB</text>
+    </g>
+    <g>
+      <rect x="95" y="38" width="32" height="28" rx="3" fill="rgba(99,102,241,0.2)" stroke="rgba(129,140,248,0.6)" strokeWidth="0.7"/>
+      <text x="111" y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">XAI</text>
+      <text x="111" y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">Why-Engine</text>
+    </g>
+    <g>
+      <rect x="140" y="38" width="32" height="28" rx="3" fill="rgba(99,102,241,0.1)" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
+      <text x="156" y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">Insight</text>
+      <text x="156" y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">Next Steps</text>
+    </g>
+    <g>
+      <rect x="185" y="38" width="32" height="28" rx="3" fill="rgba(99,102,241,0.1)" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
+      <text x="201" y="50" textAnchor="middle" fill="rgba(199,210,254,0.95)" fontSize="6" fontFamily="monospace" fontWeight="bold">Contract</text>
+      <text x="201" y="61" textAnchor="middle" fill="rgba(165,180,252,0.7)" fontSize="5.5" fontFamily="monospace">PDF Export</text>
+    </g>
     <line x1="110" y1="66" x2="110" y2="76" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
     <rect x="30" y="76" width="160" height="18" rx="3" fill="rgba(99,102,241,0.12)" stroke="rgba(129,140,248,0.3)" strokeWidth="0.7"/>
     <text x="110" y="88" textAnchor="middle" fill="rgba(199,210,254,0.85)" fontSize="6.5" fontFamily="monospace">253 HEC Universities · ChromaDB + TF-IDF</text>
@@ -185,6 +196,8 @@ const projects = [
     teamSize: "5-member team",
     keyNumbers: ["253 unis", "5 agents", "<30s", "4+ LLMs"],
   },
+  {
+    title: "NextGenShe",
     category: "Female Education Platform",
     categoryIcon: Globe,
     hook: "Millions of women want to learn — but barriers like privacy concerns, cultural stigma, and poor connectivity stop them before they start.",
